@@ -100,11 +100,12 @@ const Product = ({ item }: { item: ProductProp }) => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={variants}
-      className="shadow-sm bg-white overflow-hidden rounded-2xl"
+      className="shadow-sm bg-white overflow-hidden rounded-[2px] border border-black"
+      style={{ boxShadow: "5px 5px 0 0 #5774cd" }}
     >
       <Image
         src={item.image}
-        className="w-full object-contain h-[270px]"
+        className="w-full object-contain mt-[50px] h-[150px]"
         alt=""
       />
       <div className="py-2 min-h-[120px] flex items-center justify-between px-5 gap-10">
@@ -116,7 +117,7 @@ const Product = ({ item }: { item: ProductProp }) => {
         </div>
         <Button
           onClick={() => router.push(item.route)}
-          className="text-xs flex gap-1 px-5 items-center justify-center bg-[#E5F8FF] font-medium hover:font-semibold transition-all duration-300 hover:bg-[#d4f0fa] border border-[#E5F8FF] text-[#0F39B8] shadow-none"
+          className="text-xs rounded-[2px] flex gap-1 px-5 items-center justify-center bg-[#E5F8FF] font-medium hover:font-semibold transition-all duration-300 hover:bg-[#d4f0fa] border border-[#E5F8FF] text-[#0F39B8] shadow-none"
         >
           Learn More
           <Icon icon="cuida:caret-right-outline" className="text-[#0F39B8]" />

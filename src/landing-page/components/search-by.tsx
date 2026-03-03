@@ -118,7 +118,7 @@ const CategoryList = () => {
             <div
               className={cn(
                 "h-[150px] xl:h-[200px] flex items-center justify-center rounded-2xl w-full bg-gray-50",
-                item.containerClass
+                item.containerClass,
               )}
             >
               {item.icon}

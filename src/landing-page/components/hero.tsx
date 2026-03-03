@@ -1,274 +1,174 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+
+import React, { useEffect, useCallback, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import background from "@/assets/hero_background.webp";
-import Image from "next/image";
+import background2 from "@/assets/images/hero/15454.jpg";
+import background3 from "@/assets/images/hero/1580.jpg";
+import background4 from "@/assets/images/hero/cute-siblings-posing-together.jpg";
+import background5 from "@/assets/images/hero/medium-shot-smiley-kids-posing-together.jpg";
+
+import Image, { StaticImageData } from "next/image";
 import { Icon } from "@iconify/react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import Each from "@/components/helpers/each";
-import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
 import AnimatedBtn from "@/components/ui/animated-btn";
 
-const CATEGORIES = [
-  {
-    id: 1,
-    title: "Initial Assessment",
-    link: "/initial-assessment",
-    containerClass: "bg-[#FFEBF7] border border-[#FFEBF7]",
-    icon: (
-      <Icon
-        className="text-[#5852E2] text-[20px]"
-        icon="flowbite:school-check-outline"
-      />
-    ),
-  },
-  {
-    id: 2,
-    title: "Practice Papers",
-    link: "/practice-papers",
-    containerClass: "bg-[#E5F8FF] border border-[#E5F8FF]",
-    icon: (
-      <Icon
-        className="text-[#0F39B8] text-[20px]"
-        icon="healthicons:i-exam-multiple-choice2x-outline"
-      />
-    ),
-  },
-  {
-    id: 3,
-    title: "County",
-    link: "/local-education-authority",
-    containerClass: "bg-[#F9FFEC] border border-[#F9FFEC]",
-    icon: (
-      <Icon
-        className="text-[#81B807] text-[20px]"
-        icon="flowbite:school-check-outline"
-      />
-    ),
-  },
-  {
-    id: 4,
-    title: "Schools",
-    link: "/schools",
-    containerClass: "bg-[#D2FFF3] border border-[#D2FFF3]",
-    icon: (
-      <Icon
-        className="text-[16px] text-[#04684E]"
-        icon="teenyicons:school-outline"
-      />
-    ),
-  },
-  {
-    id: 5,
-    title: "Free Resources",
-    link: "/free-resources",
-    containerClass: "bg-[#FFEBF7] border border-[#FFEBF7]",
-    icon: (
-      <Icon className="text-[#90095A] text-[20px]" icon="hugeicons:books-02" />
-    ),
-  },
-  {
-    id: 6,
-    title: "LB 11+ Online",
-    link: "/lb-online",
-    containerClass: "bg-[#FFF7F1] border border-[#FFF7F1]",
-    icon: (
-      <Icon className="text-[#FFBA00] text-[20px]" icon="hugeicons:books-02" />
-    ),
-  },
+/* ------------------------------------------------------------------ */
+/*  Slider images                                                     */
+/* ------------------------------------------------------------------ */
+const SLIDES: StaticImageData[] = [
+  background4,
+  background,
+  background2,
+  background5,
 ];
 
-const lines = ["Healthy Smiles,", "One Child at a Time"];
+const AUTOPLAY_MS = 5000; // time per slide
 
-// const lines = ["Windcrest Pediatric", "Dentistry"];
+/* ------------------------------------------------------------------ */
+/*  Animated headline                                                 */
+/* ------------------------------------------------------------------ */
+const lines = ["Healthy Smiles,", "One Child at a Time"];
 
 const letterVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.05,
-      duration: 0.5,
-      ease: "easeOut",
-    },
+    transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" },
   }),
 };
 
-// const secondLetterVariants = {
-//   hidden: { opacity: 0, y: 50 },
-//   visible: (i: number) => ({
-//     opacity: 1,
-//     y: 0,
-//     transition: {
-//       delay: i * 0.05 + 1.5,
-//       duration: 0.5,
-//       ease: "easeOut",
-//     },
-//   }),
-// };
+const AnimatedText = () => (
+  <div className="text-left z-[2] max-w-[90%] w-full mx-auto mb-3">
+    {lines.map((line, lineIndex) => (
+      <motion.div key={lineIndex}>
+        {line.split("").map((char, index) => (
+          <motion.span
+            key={index}
+            custom={index}
+            variants={letterVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-white font-bold"
+            style={{
+              fontSize: "clamp(2rem, 5vw, 5rem)",
+              lineHeight: "clamp(2.2rem, 5.5vw, 5.5rem)",
+            }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </motion.span>
+        ))}
+      </motion.div>
+    ))}
+  </div>
+);
 
-const AnimatedText = () => {
-  return (
-    <div className="text-left z-[2] max-w-[90%] w-full mx-auto mb-5">
-      {lines.map((line, lineIndex) => (
-        <motion.div key={lineIndex} className="">
-          {line.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              custom={index}
-              variants={letterVariants}
-              initial="hidden"
-              animate="visible"
-              className="text-white font-bold"
-              style={{
-                fontSize: "clamp(2rem, 5vw, 5rem)", // Increased minimum size from 1.5rem to 2rem
-                lineHeight: "clamp(2.2rem, 5vw, 8rem)", // Increased minimum line height for better proportion
-              }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        </motion.div>
-      ))}
-    </div>
-  );
-};
-
+/* ------------------------------------------------------------------ */
+/*  Hero component                                                    */
+/* ------------------------------------------------------------------ */
 const Hero = () => {
   const router = useRouter();
+  const [current, setCurrent] = useState(0);
 
-  const [search, setSearch] = useState("");
+  /* slide navigation */
+  const next = useCallback(
+    () => setCurrent((prev) => (prev + 1) % SLIDES.length),
+    [],
+  );
 
-  const [searchType, setSearchType] = useState("schools");
+  const prev = useCallback(
+    () => setCurrent((p) => (p - 1 + SLIDES.length) % SLIDES.length),
+    [],
+  );
+
+  useEffect(() => {
+    const id = setInterval(next, AUTOPLAY_MS);
+    return () => clearInterval(id);
+  }, [next]);
 
   return (
     <div className="w-full relative lg:h-screen-minus-82 min-h-[80vh] py-[75px] overflow-hidden flex items-start justify-center flex-col gap-2">
+      {/* ---------- background image slider ---------- */}
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <Image
+            src={SLIDES[current]}
+            alt=""
+            className="w-full h-full object-cover"
+            priority
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* dark overlay */}
+      <div className="absolute inset-0 bg-black/50 z-[1]" />
+
+      {/* ---------- text content ---------- */}
       <AnimatedText />
+
+      {/* Sub-headline — concise value prop */}
       <motion.p
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
-        className="z-[2] w-full text-left max-w-[90%] mx-auto text-white text-sm md:text-xl font-semibold"
+        className="z-[2] w-full text-left max-w-[90%] mx-auto text-white text-sm md:text-lg font-medium leading-relaxed"
       >
-        Compassionate, gentle dental care in a fun and welcoming environment
-        your child will love.
+        San Antonio&apos;s trusted pediatric dentists &amp; orthodontists —
+        gentle care in a fun, kid-friendly environment.
       </motion.p>
+
+      {/* CTA */}
       <motion.div
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="absolute top-0 left-0 w-full h-full"
-      >
-        <Image src={background} alt="" className="w-full h-full object-cover" />
-      </motion.div>
-      <motion.div
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="absolute top-0 left-0 bg-black/30 z-[1] w-full h-full"
-      />
-      <motion.div
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 1.2, ease: "easeOut" }}
-        className="max-w-[90%] w-full mx-auto mt-7"
+        className="max-w-[90%] w-full mx-auto mt-5 z-[2] flex flex-wrap gap-3"
       >
         <AnimatedBtn
+          style={{ boxShadow: "4px 4px 0 0 #AC72AF" }}
           onClick={() => router.push("/contact-us?ref=appointment-request")}
-          className="z-[7] rounded-xl"
-          btnText={"Get In Touch"}
+          className="z-[7] rounded-[2px]"
+          btnText="Book an Appointment"
         />
       </motion.div>
-      {/* <motion.div
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5, ease: "easeOut" }}
-        className="mt-5 flex-col sm:flex-row overflow-hidden border border-gray-100 lg:mt-7 w-[90%] relative p-3 max-w-[1200px] lg:w-[80%] mx-auto z-[1] h-fit gap-3 sm:gap-5 md:gap-10 md:h-[75px] flex items-center justify-between rounded-md shadow-xl bg-white"
+
+      {/* ---------- left / right arrows (lg+ only) ---------- */}
+      <button
+        onClick={prev}
+        aria-label="Previous slide"
+        className="hidden lg:flex absolute left-4 bottom-[20px] z-[3] items-center justify-center w-[75px] h-[75px] rounded-sm bg-black/30 hover:bg-black/50 text-white transition-colors duration-200"
       >
-        <div className="h-full border border-gray-100 rounded-md shadow-sm sm:shadow-none sm:border-none flex items-center justify-start gap-2 flex-1 w-full pl-0 md:pl-[200px]">
-          <div className="h-full w-[200px] md:absolute left-0 overflow-hidden">
-            <Select
-              value={searchType}
-              onValueChange={(value: string) => setSearchType(value)}
-            >
-              <SelectTrigger className="w-full h-full rounded-none border-0 pl-7 border-r border-gray-200 bg-gray-50 shadow-sm text-sm font-medium">
-                <SelectValue placeholder={`Search by School or County`} />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="county" className="text-xs">
-                  Country / Region
-                </SelectItem>
-                <SelectItem value="schools" className="text-xs">
-                  Schools
-                </SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+        <Icon icon="mdi:chevron-left" className="text-5xl" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next slide"
+        className="hidden lg:flex absolute right-4 bottom-[20px] z-[3] items-center justify-center w-[75px] h-[75px] rounded-sm bg-black/30 hover:bg-black/50 text-white transition-colors duration-200"
+      >
+        <Icon icon="mdi:chevron-right" className="text-5xl" />
+      </button>
 
-          <Input
-            type="search"
-            onChange={(e) => setSearch(e.target.value.trim())}
-            className="h-[35px] border border-none sm:h-full placeholder:text-[12px] w-full placeholder:text-gray-400 outline-none pl-2 md:pl-2 shadow-none focus:pl-4 duration-200 transition-all ease-in-out focus:ring-0 focus:border-none focus-visible:ring-0"
-            placeholder={`Enter the name of a ${
-              searchType === "county" ? "county" : "school"
-            } you are interested in...`}
+      {/* ---------- slide indicators ---------- */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[3] flex gap-2">
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === current ? "w-8 bg-white" : "w-2 bg-white/50"
+            }`}
           />
-        </div>
-        <Button
-          disabled={!search}
-          onClick={() => {
-            if (searchType === "schools")
-              return router.push(`schools?search=${search}`);
-
-            if (searchType === "county")
-              return router.push(`local-education-authority?search=${search}`);
-          }}
-          className="h-[35px] sm:h-full px-10 border border-primary hover:bg-transparent hover:text-primary duration-200 lg:px-[70px] w-full sm:w-fit"
-        >
-          Search{" "}
-          <Icon
-            className="text-[16px] sm:text-[24px] text-white mt-[2px]"
-            icon="mingcute:search-line"
-          />
-        </Button>
-      </motion.div> */}
-      {/* <div className="w-[90%] max-w-[1200px] mt-2 lg:w-[80%] z-[1] flex items-center justify-center gap-2 flex-wrap">
-        <Each
-          of={CATEGORIES}
-          render={(item, index) => (
-            <motion.div
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{
-                delay: 1.5 + index / 4,
-                duration: 0.5,
-                ease: "easeOut",
-              }}
-              key={item.id}
-              onClick={() => {
-                sessionStorage.removeItem("selected_county");
-                router.push(item.link);
-              }}
-              className={cn(
-                "px-7 h-[80px] rounded-md flex text-center min-w-[150px] items-center flex-col flex-1 justify-center gap-2 cursor-pointer text-sm font-medium text-gray-600",
-                item.containerClass,
-              )}
-            >
-              {item.icon} {item.title}
-            </motion.div>
-          )}
-        />
-      </div> */}
+        ))}
+      </div>
     </div>
   );
 };
