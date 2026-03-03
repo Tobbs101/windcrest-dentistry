@@ -5,9 +5,9 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Container from "@/components/layout/container";
-import AnimatedBtn from "@/components/ui/animated-btn";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Value pillars — scannable at-a-glance cards                       */
@@ -182,13 +182,19 @@ const Welcome = ({ headerClass }: { headerClass?: string }) => {
 
           {/* CTA */}
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
-            <AnimatedBtn
-              isDark
+            <button
               onClick={() => router.push("/contact-us?ref=appointment-request")}
-              className="rounded-[2px]"
               style={{ boxShadow: "4px 4px 0 0 #AC72AF" }}
-              btnText="Schedule a Visit"
-            />
+              className="duration-300 rounded-[2px] outline-none focus:ring-0 focus-visible:ring-0 cursor-pointer px-10 py-4 relative overflow-hidden border border-black"
+            >
+              <div
+                className={cn(
+                  "flex items-center font-normal justify-center gap-1",
+                )}
+              >
+                Schedule a Visit <ArrowRight />
+              </div>
+            </button>
           </div>
         </motion.div>
       </Container>
