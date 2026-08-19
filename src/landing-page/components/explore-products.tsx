@@ -38,7 +38,7 @@ const PRODUCTS: ProductProp[] = [
     description:
       "Get to know our experienced, compassionate dental professionals.",
     image: Doctor,
-    route: "/meet-dr-sylvester-awagu",
+    route: "/meet-the-team",
   },
   {
     id: 2,
@@ -69,7 +69,7 @@ const PRODUCTS: ProductProp[] = [
     description:
       "A playful environment where comfort, care, and smiles grow together.",
     image: Hospital,
-    route: "/visiting-the-jungle",
+    route: "/office-visits",
   },
   {
     id: 6,

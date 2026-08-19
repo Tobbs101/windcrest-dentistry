@@ -15,11 +15,10 @@ import Each from "@/components/helpers/each";
 import { useToast } from "@/hooks/use-toast";
 import { Dialog } from "@/components/ui/dialog";
 import SuccessModalCard from "@/components/custom/success-modal";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import OfficeLocation from "../views/office-location";
 import AppointmentRequest from "../views/appointment-request";
 import ReferPatient from "../views/refer-a-patient";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 type ContactProps = {
   id: number;
@@ -229,14 +228,16 @@ const ContactItems = () => {
   };
 
   const searchParams = useSearchParams();
-  const router = useRouter();
   const ref = searchParams.get("ref");
 
-  const updateRef = (value: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("ref", value);
-    router.push(`?${params.toString()}`, { scroll: false });
-  };
+  const activeView =
+    ref === "appointment-request" ? (
+      <AppointmentRequest />
+    ) : ref === "refer-a-patient" ? (
+      <ReferPatient />
+    ) : (
+      <OfficeLocation />
+    );
 
   return (
     <>
@@ -249,45 +250,7 @@ const ContactItems = () => {
       />
 
       <Container className="py-5 px-5 sm:py-[70px] overflow-hidden">
-        <div className="w-full">
-          <Tabs defaultValue={ref ?? "office-location"}>
-            <div className="flex items-center justify-center mb-10">
-              <TabsList className="bg-[#F3F4F6] mx-auto flex items-center justify-center gap-2 flex-wrap text-primary rounded-full h-fit py-2 px-2 mb-4">
-                <TabsTrigger
-                  onClick={() => updateRef("office-location")}
-                  className="data-[state=active]:bg-white data-[state=active]:text-black px-7 h-[35px] rounded-3xl"
-                  value="office-location"
-                >
-                  Office Location
-                </TabsTrigger>
-                <TabsTrigger
-                  onClick={() => updateRef("appointment-request")}
-                  className="data-[state=active]:bg-white data-[state=active]:text-black px-7 h-[35px] rounded-3xl"
-                  value="appointment-request"
-                >
-                  Appointment Request
-                </TabsTrigger>
-                <TabsTrigger
-                  onClick={() => updateRef("refer-a-patient")}
-                  className="data-[state=active]:bg-white data-[state=active]:text-black px-7 h-[35px] rounded-3xl"
-                  value="refer-a-patient"
-                >
-                  Refer a Patient
-                </TabsTrigger>
-              </TabsList>
-            </div>
-
-            <TabsContent value="office-location">
-              <OfficeLocation />
-            </TabsContent>
-            <TabsContent value="appointment-request">
-              <AppointmentRequest />
-            </TabsContent>
-            <TabsContent value="refer-a-patient">
-              <ReferPatient />
-            </TabsContent>
-          </Tabs>
-        </div>
+        <div className="w-full">{activeView}</div>
       </Container>
     </>
   );

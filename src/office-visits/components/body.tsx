@@ -144,7 +144,7 @@ const OfficeVisitsBody = () => {
                   {item.step}
                 </div>
                 <div className="pt-4">
-                  <span className="text-4xl mb-4 block">{item.icon}</span>
+                  {/* <span className="text-4xl mb-4 block">{item.icon}</span> */}
                   <h3 className="font-bold text-gray-800 text-lg mb-2">
                     {item.title}
                   </h3>
@@ -187,7 +187,7 @@ const OfficeVisitsBody = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <span className="text-4xl mb-4 block">{item.icon}</span>
+                {/* <span className="text-4xl mb-4 block">{item.icon}</span> */}
                 <h3 className="font-bold text-gray-800 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </motion.div>

@@ -119,29 +119,18 @@ const AppointmentRequest = () => {
             </h1>
           </motion.div>
 
-          {/* Intro Text */}
-          <motion.div
+          {/* Intro Caption */}
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
             className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100 mb-8"
           >
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              The first step toward achieving a beautiful, healthy smile is to
-              schedule an appointment. To schedule an appointment, please
-              complete and submit the request form below. Our scheduling
-              coordinator will contact you soon to confirm your appointment.
+            <p className="text-lg text-center text-gray-700 leading-relaxed">
+              Schedule an appointment
             </p>
-            <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-              <p className="text-amber-800">
-                <strong>Please note:</strong> This form is for requesting an
-                appointment. If you need to cancel or reschedule an existing
-                appointment, or if you require immediate attention, please
-                contact our practice directly.
-              </p>
-            </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Form Section */}
           <motion.div

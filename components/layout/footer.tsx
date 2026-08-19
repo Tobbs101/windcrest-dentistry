@@ -17,31 +17,24 @@ const browseLinks = [
 
 const socialLinks = [
   {
-    icon: "mdi:map-marker",
-    href: "https://www.google.com/maps/place/5500+Walzem+Rd,+San+Antonio,+TX+78218",
-    label: "Location",
-  },
-  {
     icon: "mdi:facebook",
     href: "https://www.facebook.com/windcrestpediatricdentistry",
     label: "Facebook",
   },
   {
     icon: "mdi:youtube",
-    href: "https://www.youtube.com",
+    href: "https://www.youtube.com/user/windcrestpedo",
     label: "YouTube",
   },
   {
-    icon: "mdi:twitter",
-    href: "https://twitter.com",
-    label: "Twitter",
-  },
-  {
-    icon: "simple-icons:yelp",
-    href: "https://www.yelp.com",
-    label: "Yelp",
+    icon: "simple-icons:x",
+    href: "https://x.com/WindcrestDental",
+    label: "X (formerly Twitter)",
   },
 ];
+
+const locationUrl =
+  "https://www.google.com/maps/place/Windcrest+Pediatric+Dentistry/@29.510027,-98.3841347,17z/data=!3m1!4b1!4m5!3m4!1s0x865cf345b3b6061f:0x2c9ab1345e34f502!8m2!3d29.510027!4d-98.381946";
 
 const Footer = () => {
   return (
@@ -69,6 +62,25 @@ const Footer = () => {
                 </Link>
               ))}
             </nav>
+          </div>
+
+          {/* Location Section */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 tracking-wide">LOCATION</h3>
+            <a
+              href={locationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-2 text-sm text-white/90 hover:text-white transition-colors"
+              aria-label="View Windcrest Pediatric Dentistry on Google Maps"
+            >
+              <Icon icon="mdi:map-marker" className="mt-0.5 text-xl shrink-0" />
+              <address className="not-italic">
+                5500 Walzem Rd.
+                <br />
+                San Antonio, TX 78218
+              </address>
+            </a>
           </div>
 
           {/* Connect Section */}

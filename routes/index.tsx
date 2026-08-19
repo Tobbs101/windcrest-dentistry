@@ -349,5 +349,46 @@ export const NAVIGATION_LINKS: LinkProp[] = [
     route: "/contact-us",
     label: "Contact Us",
     className: "w-[300px] p-2 md:w-[300px] lg:w-[300px]",
+    routes: [
+      {
+        id: 1,
+        route: "/contact-us?ref=office-location",
+        label: "Office Location",
+        icon: {
+          element: (
+            <Icon
+              className="text-[24px]"
+              icon={"mdi:office-building-marker-outline"}
+            />
+          ),
+          iconClass: "bg-[#F7F3FF] text-[#5852E2]",
+        },
+      },
+      {
+        id: 2,
+        route: "/contact-us?ref=appointment-request",
+        label: "Appointment Request",
+        icon: {
+          element: (
+            <Icon className="text-[24px]" icon={"mdi:calendar-clock-outline"} />
+          ),
+          iconClass: "bg-[#FFF7F1] text-[#FFBA00]",
+        },
+      },
+      {
+        id: 3,
+        route: "/contact-us?ref=refer-a-patient",
+        label: "Refer a Patient",
+        icon: {
+          element: (
+            <Icon
+              className="text-[24px]"
+              icon={"mdi:account-arrow-right-outline"}
+            />
+          ),
+          iconClass: "bg-[#F9FFEC] text-[#81B807]",
+        },
+      },
+    ],
   },
 ];
