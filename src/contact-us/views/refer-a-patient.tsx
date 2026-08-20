@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import SuccessModalCard from "@/components/custom/success-modal";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { Building2, UserRound } from "lucide-react";
 
 const formSchema = z.object({
   // Practice Information
@@ -127,17 +128,17 @@ const ReferPatient = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header Section */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
-              Refer a Patient
+            <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
+              Professional Referrals
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Refer a <span className="text-sky-600">Patient</span>
+            <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+              Refer a Patient
             </h1>
           </motion.div>
 
@@ -147,7 +148,7 @@ const ReferPatient = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100 mb-8"
+            className="mb-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:p-8 card-treatment card-sky"
           >
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
               A successful practice doesn't just happen; it is the result of a
@@ -174,10 +175,11 @@ const ReferPatient = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100"
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:p-8 card-treatment card-sky"
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-3">
-                  <span className="text-3xl">🏥</span> Practice Information
+                  <Building2 className="size-6 text-sky-700" aria-hidden="true" />
+                  Practice Information
                 </h2>
                 <p className="text-gray-600 mb-6">
                   <span className="text-red-500">*</span> Bold fields are
@@ -249,10 +251,11 @@ const ReferPatient = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100"
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:p-8 card-treatment card-sky"
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                  <span className="text-3xl">👤</span> Referral Information
+                  <UserRound className="size-6 text-sky-700" aria-hidden="true" />
+                  Referral Information
                 </h2>
 
                 <div className="space-y-6">
@@ -390,7 +393,7 @@ const ReferPatient = () => {
                 className="text-center"
               >
                 <SubmitBtn
-                  className="w-full sm:w-auto px-12 py-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-full transition-colors text-lg"
+                  className="w-full rounded-lg bg-sky-700 px-12 py-4 text-lg font-semibold text-white transition-colors hover:bg-sky-800 sm:w-auto"
                   isSubmitting={isSubmitting}
                   disabled={isSubmitting}
                 >
@@ -406,12 +409,12 @@ const ReferPatient = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
-            className="mt-8 bg-gradient-to-r from-sky-600 to-blue-700 rounded-2xl p-8 text-center text-white"
+            className="mt-8 rounded-xl border border-sky-100 bg-sky-50 p-8 text-gray-900 card-treatment card-sky"
           >
             <h3 className="text-xl font-bold mb-2">
-              Thank You for Your Referral! 🙏
+              Thank You for Your Referral
             </h3>
-            <p className="text-sky-100">
+            <p className="text-gray-600">
               We truly appreciate your trust in our practice and look forward to
               providing excellent care to your patient.
             </p>

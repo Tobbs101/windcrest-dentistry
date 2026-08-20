@@ -29,7 +29,7 @@ const bracesTypes = [
     borderColor: "border-gray-300",
     // image: MetalBracesImage,
     image: TraditionalMetal,
-    imagePlaceholder: "🦷⚙️",
+    imagePlaceholder: "",
     description:
       "Traditional metal braces are the most common type of braces and are more comfortable today than ever before. Made of high-grade stainless steel, metal braces straighten your teeth using metal brackets and archwires. With metal braces, you have the option of adding colored elastics (rubber bands) for a more unique and colorful smile.",
     highlights: [
@@ -47,7 +47,7 @@ const bracesTypes = [
     bgColor: "bg-blue-50",
     borderColor: "border-blue-300",
     // image: SelfLigatingImage,
-    imagePlaceholder: "🔄🦷",
+    imagePlaceholder: "",
     image: SelfLitigating,
     description:
       "Self-ligating braces are made from the same materials as traditional braces. However, self-ligating braces do not require the use of elastics, meaning fewer appointments and less friction being placed on the tooth. Self-ligating braces come with traditional metal, ceramic, or clear brackets. They are the same size as metal braces, but use a specialized clip in place of elastics to help the archwire guide teeth into place. The clip helps reduce the amount of pressure being placed on the tooth, and requires fewer adjustments because there are no elastics to replace.",
@@ -67,7 +67,7 @@ const bracesTypes = [
     borderColor: "border-amber-300",
     image: Clear,
     // image: CeramicBracesImage,
-    imagePlaceholder: "✨🦷",
+    imagePlaceholder: "",
     description:
       "Ceramic braces are made of clear materials and are therefore less visible on your teeth than metal braces. For this reason, ceramic braces are used mainly on older teenagers and adult patients who have cosmetic concerns. While they are visually less prominent, they do require more attention to oral hygiene as ceramic braces are larger and are more brittle than their metal counterparts. For these reasons, ceramic braces tend to be used more on upper front teeth than on lower teeth.",
     highlights: [
@@ -85,7 +85,7 @@ const bracesTypes = [
     bgColor: "bg-sky-50",
     borderColor: "border-sky-300",
     // image: ClearAlignersImage,
-    imagePlaceholder: "👁️‍🗨️✨",
+    imagePlaceholder: "",
     image: Invisalign,
     description:
       "Clear aligners are a series of invisible, removable, and comfortable acrylic trays that straighten your teeth like braces. Not only are the aligners invisible, they are removable, so you can eat and drink what you want while in treatment, plus brushing and flossing are less of a hassle. The aligners are comfortable and have no metal to cause mouth abrasions during treatment.",
@@ -104,7 +104,7 @@ const bracesTypes = [
     bgColor: "bg-purple-50",
     borderColor: "border-purple-300",
     // image: LingualBracesImage,
-    imagePlaceholder: "🎭🦷",
+    imagePlaceholder: "",
     image: Lingual,
     description:
       'Lingual braces are hidden behind the teeth and are therefore "invisible" when you smile. Lingual braces are 100% customized to match the shape of your teeth; the metal appliances are created uniquely for you. Lingual braces are a very reasonable option for athletes, models, actors/actresses, musicians who play wind instruments, and adult professionals.',
@@ -122,19 +122,19 @@ const TypesOfBracesBody = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
             Orthodontic Options
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Types of <span className="text-sky-600">Braces</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Types of <span>Braces</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We offer a variety of braces to fit your lifestyle and treatment
             needs. Explore our options to find the perfect fit for your smile
             journey.
@@ -159,7 +159,7 @@ const TypesOfBracesBody = () => {
                 className={`${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
               >
                 <div
-                  className={`relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl ${braces.bgColor} border-2 ${braces.borderColor} flex items-center justify-center`}
+                  className={`relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-md ${braces.bgColor} border-2 ${braces.borderColor} flex items-center justify-center`}
                 >
                   {/* TODO: Replace with actual image */}
 
@@ -226,7 +226,7 @@ const TypesOfBracesBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 via-blue-600 to-sky-700 rounded-3xl p-8 md:p-12 text-center text-white mt-20"
+          className="bg-sky-700 rounded-2xl p-8 md:p-12 text-center text-white mt-20"
         >
           <h2 className="text-2xl gap-2 flex items-center justify-center md:text-3xl font-bold mb-4">
             Find the Right Braces for You{" "}
@@ -241,7 +241,7 @@ const TypesOfBracesBody = () => {
           </p>
           <a
             href="/contact-us?ref=appointment-request"
-            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-lg"
+            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-sm"
           >
             Schedule a Consultation
           </a>

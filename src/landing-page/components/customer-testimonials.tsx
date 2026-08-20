@@ -49,7 +49,7 @@ const Ratings = ({ value }: { value: number }) => {
 
 const Testimonial = ({ item }: { item: TestimonialItem }) => {
   return (
-    <div className="border border-gray-100 bg-white shadow-sm rounded-lg p-5">
+    <div className="border border-gray-100 bg-white shadow-sm rounded-lg p-5 card-treatment card-purple">
       <Ratings value={item.rating} />
       <p className="scrollbar-visible border border-gray-100 text-sm p-3 rounded-md shadow-inner overflow-hidden overflow-y-scroll h-[170px] my-3">
         {item.content}

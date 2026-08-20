@@ -39,7 +39,7 @@ const FailureModalCard = ({
       />
 
       {/* Modal Content */}
-      <div className="relative bg-white rounded-lg shadow-2xl max-w-md w-[95%] h-[350px] md:w-[415px] p-10 flex flex-col">
+      <div className="relative bg-white rounded-lg shadow-md max-w-md w-[95%] h-[350px] md:w-[415px] p-10 flex flex-col">
         <div className="cta flex flex-col flex-1 justify-between mb-[46px] items-center">
           <h2 className="text-[20px] font-medium text-red-600">{title}</h2>
 

@@ -1,19 +1,19 @@
 import React from 'react';
 
 interface TestimonialCardProps {
-  rating: number; 
+  rating: number;
   quote: string;
   author: string;
   position: string;
   company: string;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ 
-  rating = 5, 
-  quote, 
-  author, 
-  position, 
-  company 
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+  rating = 5,
+  quote,
+  author,
+  position,
+  company
 }) => {
   return (
     <div className="max-w-sm p-6 bg-white rounded-lg shadow-md border border-gray-100">

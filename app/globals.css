@@ -124,3 +124,38 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #a0aec0 !important;
   border-radius: 4px;
 }
+
+/* Shared card treatment based on the landing-page welcome cards. */
+.card-treatment {
+  border: 1px solid #111827 !important;
+  border-radius: 2px !important;
+  box-shadow: 3px 3px 0 0 var(--card-shadow, #64748b) !important;
+}
+
+.card-sky {
+  --card-shadow: #0ea5e9;
+}
+
+.card-emerald {
+  --card-shadow: #10b981;
+}
+
+.card-orange {
+  --card-shadow: #f97316;
+}
+
+.card-pink {
+  --card-shadow: #ec4899;
+}
+
+.card-violet {
+  --card-shadow: #8b5cf6;
+}
+
+.card-red {
+  --card-shadow: #ef4444;
+}
+
+.card-purple {
+  --card-shadow: #ac72af;
+}

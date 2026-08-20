@@ -8,19 +8,16 @@ import HeroBg from "@/assets/happy-girl-with-adorable-hair-smiling.jpg";
 
 const sedationOptions = [
   {
-    icon: "💨",
     title: "Nitrous Oxide Sedation",
     description:
       "Safe and gentle sedation to help children relax during procedures.",
   },
   {
-    icon: "💊",
     title: "Oral Conscious Sedation",
     description:
       "Medication to calm anxious patients while keeping them responsive.",
   },
   {
-    icon: "😴",
     title: "General Anesthesia",
     description: "Complete sedation for complex procedures when appropriate.",
   },
@@ -28,23 +25,19 @@ const sedationOptions = [
 
 const orthodonticFeatures = [
   {
-    icon: "🛡️",
     title: "Safe Treatments",
     description:
       "All procedures prioritize your child's safety and well-being.",
   },
   {
-    icon: "✨",
     title: "Comfortable Care",
     description: "Modern techniques that minimize discomfort during treatment.",
   },
   {
-    icon: "🎯",
     title: "Effective Results",
     description: "Proven methods that deliver beautiful, lasting smiles.",
   },
   {
-    icon: "🔬",
     title: "Latest Technology",
     description: "State-of-the-art orthodontic equipment for complete care.",
   },
@@ -56,9 +49,9 @@ const WhatSetsUsApartBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
@@ -67,12 +60,12 @@ const WhatSetsUsApartBody = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4"
           >
             Why Choose Us
           </motion.span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            What Sets Us <span className="text-sky-600">Apart</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            What Sets Us Apart
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Dedicated to providing exceptional pediatric dental and orthodontic
@@ -93,9 +86,6 @@ const WhatSetsUsApartBody = () => {
             {/* Content */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-pink-400 to-rose-500 rounded-2xl flex items-center justify-center shadow-lg">
-                  <span className="text-3xl">👶</span>
-                </div>
                 <h2 className="text-3xl font-bold text-gray-800">
                   Taking Care of the Smallest Smiles
                 </h2>
@@ -123,11 +113,8 @@ const WhatSetsUsApartBody = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                    className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 card-treatment card-pink"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-pink-100 to-rose-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">{option.icon}</span>
-                    </div>
                     <div>
                       <h3 className="font-semibold text-gray-800">
                         {option.title}
@@ -149,12 +136,12 @@ const WhatSetsUsApartBody = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square max-w-lg mx-auto rounded-3xl overflow-hidden shadow-xl">
+              <div className="aspect-square max-w-lg mx-auto rounded-[2px] overflow-hidden shadow-md">
                 <Image
                   src={HeroBg}
                   alt="Happy child at dentist"
                   fill
-                  className="object-cover rounded-2xl"
+                  className="object-cover rounded-[2px]"
                 />
               </div>
               {/* Floating Elements */}
@@ -170,16 +157,13 @@ const WhatSetsUsApartBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 to-blue-600 rounded-3xl p-8 md:p-12 text-white mb-20 relative overflow-hidden"
+          className="bg-sky-600 rounded-[2px] p-8 md:p-12 text-white mb-20 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
-                <span className="text-3xl">✨</span>
-              </div>
               <h2 className="text-3xl md:text-4xl font-bold">
                 Making All Smiles Beautiful for Life
               </h2>
@@ -216,9 +200,8 @@ const WhatSetsUsApartBody = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-5 hover:bg-white/20 transition-colors"
+                  className="bg-white/10 backdrop-blur-sm rounded-[2px] p-5 hover:bg-white/20 transition-colors"
                 >
-                  <span className="text-3xl mb-3 block">{feature.icon}</span>
                   <h3 className="font-semibold text-white mb-1">
                     {feature.title}
                   </h3>
@@ -238,7 +221,7 @@ const WhatSetsUsApartBody = () => {
           className="text-center mb-16"
         >
           <div className="max-w-3xl mx-auto">
-            <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <svg
                 className="w-10 h-10 text-white"
                 fill="none"
@@ -264,7 +247,7 @@ const WhatSetsUsApartBody = () => {
             </p>
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-sky-600 text-white font-semibold rounded-[2px] hover:shadow-sm transition-all duration-300"
             >
               Contact Our Practice
               <svg
@@ -300,7 +283,7 @@ const WhatSetsUsApartBody = () => {
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              className="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow card-treatment card-pink"
             >
               <p className="text-3xl md:text-4xl font-bold text-sky-600 mb-2">
                 {stat.number}

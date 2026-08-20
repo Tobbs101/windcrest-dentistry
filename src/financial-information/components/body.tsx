@@ -3,37 +3,48 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
+import {
+  BellRing,
+  CalendarDays,
+  CircleHelp,
+  CreditCard,
+  LockKeyhole,
+  MonitorSmartphone,
+  Printer,
+  ReceiptText,
+  ShieldCheck,
+  WalletCards,
+} from "lucide-react";
 
 const onlineServices = [
   {
-    icon: "📅",
+    icon: CalendarDays,
     title: "View Appointments",
     description: "View your appointment and account information any time",
   },
   {
-    icon: "🔔",
+    icon: BellRing,
     title: "Appointment Reminders",
     description: "Sign up for email or text appointment reminders",
   },
   {
-    icon: "💰",
+    icon: ReceiptText,
     title: "Payment History",
     description: "Check your payment history and see current charges",
   },
   {
-    icon: "🧾",
+    icon: Printer,
     title: "Print Receipts",
     description: "Print out flex spending reimbursement and tax receipts",
   },
 ];
 
 const paymentMethods = [
-  { icon: "💳", name: "Visa" },
-  { icon: "💳", name: "Mastercard" },
-  { icon: "💳", name: "American Express" },
-  { icon: "💳", name: "Discover" },
-  { icon: "🏥", name: "Insurance Plans" },
+  { icon: CreditCard, name: "Visa" },
+  { icon: CreditCard, name: "Mastercard" },
+  { icon: CreditCard, name: "American Express" },
+  { icon: CreditCard, name: "Discover" },
+  { icon: ShieldCheck, name: "Insurance Plans" },
 ];
 
 const FinancialInformationBody = () => {
@@ -53,14 +64,14 @@ const FinancialInformationBody = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold mb-4"
           >
             Payment Options
           </motion.span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Financial <span className="text-emerald-600">Information</span>
+          <h1 className="text-4xl underline decoration-emerald-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Financial Information
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
             The cost of your treatment will vary depending on your individual
             needs and treatment plan. We will discuss with you the cost of your
             treatment and each of your available payment options before you
@@ -74,15 +85,15 @@ const FinancialInformationBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-[2px] p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <span className="text-4xl">💵</span>
+              <div className="w-16 h-16 bg-white/20 rounded-[2px] flex items-center justify-center">
+                <WalletCards className="size-8" aria-hidden="true" />
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold">
@@ -100,15 +111,15 @@ const FinancialInformationBody = () => {
             </p>
 
             {/* Payment Methods */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-[2px] p-6">
               <p className="text-emerald-100 font-medium mb-4">We Accept:</p>
               <div className="flex flex-wrap gap-3">
                 {paymentMethods.map((method, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full"
+                    className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-[2px]"
                   >
-                    <span>{method.icon}</span>
+                    <method.icon className="size-4" aria-hidden="true" />
                     <span className="text-white font-medium text-sm">
                       {method.name}
                     </span>
@@ -128,10 +139,10 @@ const FinancialInformationBody = () => {
           className="grid lg:grid-cols-2 gap-8 mb-16"
         >
           {/* Insurance Help */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 card-treatment card-sky">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🏥</span>
+              <div className="w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-sm">
+                <ShieldCheck className="size-7 text-white" aria-hidden="true" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800">
                 Insurance Assistance
@@ -142,7 +153,7 @@ const FinancialInformationBody = () => {
               Our office staff is always available to help you with insurance
               claims and paperwork.
             </p>
-            <div className="bg-sky-50 rounded-xl p-5 border border-sky-100">
+            <div className="bg-sky-50 rounded-xl p-5 border border-sky-100 card-treatment card-sky">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg
@@ -173,11 +184,11 @@ const FinancialInformationBody = () => {
           </div>
 
           {/* Questions */}
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100 flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100 flex flex-col justify-between card-treatment card-orange">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
-                  <span className="text-2xl">❓</span>
+                <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-sm">
+                  <CircleHelp className="size-7 text-white" aria-hidden="true" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-800">
                   Have Questions?
@@ -192,7 +203,7 @@ const FinancialInformationBody = () => {
             </div>
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 w-fit"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold rounded-[2px] hover:shadow-sm transition-all duration-300 w-fit"
             >
               Contact Us
               <svg
@@ -221,8 +232,8 @@ const FinancialInformationBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">💻</span>
+            <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+              <MonitorSmartphone className="size-8 text-white" aria-hidden="true" />
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Convenient Online Services
@@ -241,10 +252,10 @@ const FinancialInformationBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow text-center"
+                className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow text-center card-treatment card-violet"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-violet-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">{service.icon}</span>
+                  <service.icon className="size-7 text-violet-700" aria-hidden="true" />
                 </div>
                 <h3 className="font-bold text-gray-800 text-lg mb-2">
                   {service.title}
@@ -263,15 +274,13 @@ const FinancialInformationBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-10 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2px] p-10 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
             <div className="relative z-10">
               <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-5xl ml-1.5 text-white">
-                  <Icon icon="hugeicons:lock-key" />
-                </span>
+                <LockKeyhole className="size-9 text-white" aria-hidden="true" />
               </div>
               <h2 className="text-3xl font-bold mb-4">Need a Patient Login?</h2>
               <p className="text-gray-300 max-w-xl mx-auto mb-8">
@@ -281,7 +290,7 @@ const FinancialInformationBody = () => {
               </p>
               <Link
                 href="/contact-us?ref=appointment-request"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-800 font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-800 font-semibold rounded-full hover:shadow-sm transition-all duration-300"
               >
                 Request Account Setup
                 <svg

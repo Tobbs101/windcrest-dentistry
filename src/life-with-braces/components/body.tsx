@@ -5,16 +5,14 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
 const foodsToAvoid = [
-  { icon: "🥯", category: "Chewy foods", examples: "bagels, licorice" },
-  { icon: "🍿", category: "Crunchy foods", examples: "popcorn, chips, ice" },
+  { category: "Chewy foods", examples: "bagels, licorice" },
+  { category: "Crunchy foods", examples: "popcorn, chips, ice" },
   {
-    icon: "🍬",
     category: "Sticky foods",
     examples: "caramel candies, chewing gum",
   },
-  { icon: "🥜", category: "Hard foods", examples: "nuts, hard candies" },
+  { category: "Hard foods", examples: "nuts, hard candies" },
   {
-    icon: "🌽",
     category: "Foods that require biting into",
     examples: "corn on the cob, apples, carrots",
   },
@@ -22,34 +20,28 @@ const foodsToAvoid = [
 
 const foodsYouCanEat = [
   {
-    icon: "🧀",
     category: "Dairy",
     examples: "soft cheese, pudding, milk-based drinks",
   },
   {
-    icon: "🥞",
     category: "Breads",
     examples: "soft tortillas, pancakes, muffins without nuts",
   },
-  { icon: "🍝", category: "Grains", examples: "pasta, soft cooked rice" },
+  { category: "Grains", examples: "pasta, soft cooked rice" },
   {
-    icon: "🍗",
     category: "Meats/poultry",
     examples: "soft cooked chicken, meatballs, lunch meats",
   },
-  { icon: "🐟", category: "Seafood", examples: "tuna, salmon, crab cakes" },
+  { category: "Seafood", examples: "tuna, salmon, crab cakes" },
   {
-    icon: "🥔",
     category: "Vegetables",
     examples: "mashed potatoes, steamed spinach, beans",
   },
   {
-    icon: "🍌",
     category: "Fruits",
     examples: "applesauce, bananas, fruit juice",
   },
   {
-    icon: "🍦",
     category: "Treats",
     examples: "ice cream without nuts, milkshakes, Jell-O, soft cake",
   },
@@ -82,19 +74,19 @@ const LifeWithBracesBody = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
             Life with Braces
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Life with <span className="text-sky-600">Braces</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Life with <span>Braces</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Now that you have your braces, how do you take care of them?
             It&apos;s important for you to know how to properly take care of
             your braces throughout your entire orthodontic treatment.
@@ -109,9 +101,9 @@ const LifeWithBracesBody = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-sky-600 to-blue-700 rounded-3xl p-8 md:p-12 text-white mb-12">
+          <div className="bg-sky-700 rounded-2xl p-8 md:p-12 text-white mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-              🍽️ Eating with Braces
+               Eating with Braces
             </h2>
             <p className="text-lg text-sky-100 text-center max-w-3xl mx-auto">
               Don&apos;t worry, you&apos;ll be eating popcorn and snacking on
@@ -129,7 +121,7 @@ const LifeWithBracesBody = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-red-50 rounded-2xl p-6 border border-red-100"
+              className="bg-red-50 rounded-2xl p-6 border border-red-100 card-treatment card-sky"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
@@ -146,9 +138,8 @@ const LifeWithBracesBody = () => {
                 {foodsToAvoid.map((food, index) => (
                   <div
                     key={index}
-                    className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-red-400 flex items-center gap-3"
+                    className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-red-400 flex items-center gap-3 card-treatment card-sky"
                   >
-                    <span className="text-2xl">{food.icon}</span>
                     <div>
                       <p className="font-semibold text-gray-900">
                         {food.category}
@@ -166,7 +157,7 @@ const LifeWithBracesBody = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-green-50 rounded-2xl p-6 border border-green-100"
+              className="bg-green-50 rounded-2xl p-6 border border-green-100 card-treatment card-sky"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
@@ -183,9 +174,8 @@ const LifeWithBracesBody = () => {
                 {foodsYouCanEat.map((food, index) => (
                   <div
                     key={index}
-                    className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-400 flex items-center gap-3"
+                    className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-400 flex items-center gap-3 card-treatment card-sky"
                   >
-                    <span className="text-2xl">{food.icon}</span>
                     <div>
                       <p className="font-semibold text-gray-900">
                         {food.category}
@@ -209,12 +199,12 @@ const LifeWithBracesBody = () => {
         >
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              😣 Soreness from Braces{" "}
+               Soreness from Braces{" "}
               <span className="text-sky-600">and Appliances</span>
             </h2>
           </div>
 
-          <div className="bg-gradient-to-br from-white to-sky-50 rounded-2xl p-8 shadow-lg border border-sky-100">
+          <div className="bg-gradient-to-br from-white to-sky-50 rounded-2xl p-8 shadow-sm border border-sky-100 card-treatment card-sky">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -224,7 +214,7 @@ const LifeWithBracesBody = () => {
                 </p>
                 <div className="bg-sky-100 p-4 rounded-xl">
                   <p className="text-sky-800 font-medium">
-                    💡 <strong>Quick Relief Tip:</strong> Dissolve one teaspoon
+                     <strong>Quick Relief Tip:</strong> Dissolve one teaspoon
                     of salt in eight ounces of lukewarm water. Swish and gargle
                     this solution in your mouth for just a couple of minutes (do
                     not swallow the saltwater).
@@ -239,9 +229,9 @@ const LifeWithBracesBody = () => {
                   for one to two weeks as they toughen and become used to the
                   braces.
                 </p>
-                <div className="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 card-treatment card-sky">
                   <p className="text-amber-800 font-medium">
-                    🕯️ <strong>Wax Tip:</strong> We would be happy to give you
+                     <strong>Wax Tip:</strong> We would be happy to give you
                     some wax that you can put over the braces to lessen the
                     tenderness. If you need some wax, please let us know.
                   </p>
@@ -261,7 +251,7 @@ const LifeWithBracesBody = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🔧 Braces <span className="text-sky-600">Care Tips</span>
+               Braces <span className="text-sky-600">Care Tips</span>
             </h2>
           </div>
 
@@ -273,7 +263,7 @@ const LifeWithBracesBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-sky-100 group"
+                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-sky-100 group card-treatment card-sky"
               >
                 <div className="w-14 h-14 bg-sky-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-600 transition-colors">
                   <Icon
@@ -297,10 +287,10 @@ const LifeWithBracesBody = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="bg-sky-50 p-6 rounded-2xl mt-8 border border-sky-100"
+            className="bg-sky-50 p-6 rounded-2xl mt-8 border border-sky-100 card-treatment card-sky"
           >
             <p className="text-lg text-gray-700">
-              <strong>🔩 Temporary Wire Fix:</strong> You can temporarily fix a
+              <strong> Temporary Wire Fix:</strong> You can temporarily fix a
               loose wire by using the back of a spoon or the eraser end of a
               pencil to carefully and gently push the wire back into place. If
               the loose wire is causing irritation to your lips or cheeks, put
@@ -317,11 +307,11 @@ const LifeWithBracesBody = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 md:p-12 text-white">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  🏆 Playing Sports with Braces
+                   Playing Sports with Braces
                 </h2>
                 <p className="text-lg text-green-100 mb-4">
                   Game, Set, Match — we have great news for athletes! You can
@@ -336,7 +326,7 @@ const LifeWithBracesBody = () => {
               </div>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
                 <h3 className="text-xl font-semibold mb-4">
-                  🚨 Sports Emergency?
+                   Sports Emergency?
                 </h3>
                 <ul className="space-y-3 text-green-100">
                   <li className="flex items-start gap-2">
@@ -380,7 +370,7 @@ const LifeWithBracesBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 via-blue-600 to-sky-700 rounded-3xl p-8 md:p-12 text-center text-white"
+          className="bg-sky-700 rounded-2xl p-8 md:p-12 text-center text-white"
         >
           <h2 className="text-2xl gap-2 flex items-center justify-center md:text-3xl font-bold mb-4">
             Questions About Your Braces?{" "}
@@ -395,7 +385,7 @@ const LifeWithBracesBody = () => {
           </p>
           <a
             href="/contact-us?ref=appointment-request"
-            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-lg"
+            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-sm"
           >
             Contact Us
           </a>

@@ -348,7 +348,7 @@ export const NAVIGATION_LINKS: LinkProp[] = [
     id: 6,
     route: "/contact-us",
     label: "Contact Us",
-    className: "w-[300px] p-2 md:w-[300px] lg:w-[300px]",
+    className: "w-[300px] p-2 md:w-[300px] lg:w-[400px]",
     routes: [
       {
         id: 1,

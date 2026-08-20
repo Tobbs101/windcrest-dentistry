@@ -31,7 +31,6 @@ const ProductCard = ({ itemLink, price, imageLink }: ProductCardProps) => {
         <h3 className="text-3xl font-semibold">£{price}</h3>
         <span className="border-x-2 border-gray-500 h-10 inline-block"></span>
         <div className="flex flex-col">
-          <span className="text-[#C0F333]">★★★★★</span>
           <span className="text-gray-500 text-sm">
             (4.5 stars) • 15 reviews
           </span>

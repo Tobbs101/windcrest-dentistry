@@ -113,7 +113,7 @@ const CategoryList = () => {
               router.push(item.link);
             }}
             key={item.id}
-            className="border cursor-pointer duration-300 hover:border-gray-50 hover:shadow-lg border-gray-100 shadow-sm rounded-xl p-6 md:p-8 h-[200px] sm:h-[280px] xl:h-[320px] flex flex-col justify-between"
+            className="card-treatment card-purple border cursor-pointer duration-300 hover:border-gray-50 hover:shadow-sm border-gray-100 shadow-sm rounded-xl p-6 md:p-8 h-[200px] sm:h-[280px] xl:h-[320px] flex flex-col justify-between"
           >
             <div
               className={cn(

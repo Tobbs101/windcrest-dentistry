@@ -58,19 +58,19 @@ const ForTeensBody = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
             For Teens
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Orthodontics for <span className="text-sky-600">Teens</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Orthodontics for <span>Teens</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Braces, retainers, and everything else that you want to know about
             orthodontics!
           </p>
@@ -85,7 +85,7 @@ const ForTeensBody = () => {
           className="grid md:grid-cols-2 gap-12 items-center mb-20"
         >
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border border-sky-100">
+            <div className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border border-sky-100 card-treatment card-sky">
               <p className="text-xl text-gray-700 italic mb-4">
                 You&apos;ve just heard the three words that every teen dreads:
               </p>
@@ -94,7 +94,7 @@ const ForTeensBody = () => {
               </p>
             </div>
             <h2 className="text-2xl font-bold text-gray-900">
-              Braces! What now? 🤔
+              Braces! What now?
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Don&apos;t worry! Braces aren&apos;t nearly as scary as you may
@@ -105,9 +105,8 @@ const ForTeensBody = () => {
           </div>
 
           {/* Decorative Element */}
-          <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center">
+          <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center">
             <div className="text-center p-8">
-              <span className="text-8xl mb-4 block">😁</span>
               <p className="text-sky-700 font-semibold text-xl">
                 Your Perfect Smile Awaits
               </p>
@@ -126,9 +125,9 @@ const ForTeensBody = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-sky-600 to-blue-700 rounded-3xl p-8 md:p-12 text-white mb-12">
+          <div className="bg-sky-700 rounded-2xl p-8 md:p-12 text-white mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-              ⏱️ How Long Will I Have to Wear Braces?
+              How Long Will I Have to Wear Braces?
             </h2>
             <p className="text-xl text-sky-100 text-center max-w-3xl mx-auto">
               The amount of time it takes to treat your smile with braces
@@ -144,7 +143,7 @@ const ForTeensBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-sky-100 group"
+                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-sky-100 group card-treatment card-sky"
               >
                 <div className="w-14 h-14 bg-sky-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors">
                   <Icon
@@ -173,9 +172,9 @@ const ForTeensBody = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🎨 Braces <span className="text-sky-600">Your Way!</span>
+               Braces <span className="text-sky-600">Your Way!</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our practice offers a variety of braces, types, and styles to
               choose from. Some common options include:
             </p>
@@ -189,7 +188,7 @@ const ForTeensBody = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-sky-50 p-6 rounded-2xl shadow-lg border-l-4 border-sky-500 hover:shadow-xl transition-shadow"
+                className="bg-gradient-to-br from-white to-sky-50 p-6 rounded-2xl shadow-sm border-l-4 border-sky-500 hover:shadow-md transition-shadow card-treatment card-sky"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -213,7 +212,7 @@ const ForTeensBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 via-blue-600 to-sky-700 rounded-3xl p-8 md:p-12 text-center text-white"
+          className="bg-sky-700 rounded-2xl p-8 md:p-12 text-center text-white"
         >
           <h2 className="text-2xl gap-2 flex items-center justify-center md:text-3xl font-bold mb-4">
             Look Good, Feel Good!{" "}
@@ -229,7 +228,7 @@ const ForTeensBody = () => {
           </p>
           <a
             href="/contact-us?ref=appointment-request"
-            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-lg"
+            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-sm"
           >
             Schedule Your Checkup
           </a>

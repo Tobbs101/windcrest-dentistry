@@ -58,25 +58,21 @@ const treatmentSteps = [
 
 const successTips = [
   {
-    icon: "📋",
     title: "Follow Your Orthodontist's Instructions",
     description:
       "Whether it's wearing aligners for the recommended time each day or showing up for regular adjustments, sticking to your orthodontist's plan is crucial.",
   },
   {
-    icon: "🪥",
     title: "Maintain Excellent Oral Hygiene",
     description:
       "Brushing and flossing regularly is essential, especially with braces or aligners, to prevent plaque buildup and cavities.",
   },
   {
-    icon: "🚫",
     title: "Avoid Harmful Habits",
     description:
       "Chewing on hard objects (like ice or pens) or eating sticky, crunchy foods can damage braces or disrupt the treatment process.",
   },
   {
-    icon: "😁",
     title: "Wear Retainers as Prescribed",
     description:
       "Once your treatment is complete, wearing retainers will ensure your teeth stay in their new position and don't shift back over time.",
@@ -89,17 +85,17 @@ const AboutOrthodonticsBody = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
             About Orthodontics
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="text-sky-600">Orthodontics</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            About <span>Orthodontics</span>
           </h1>
         </motion.div>
 
@@ -128,7 +124,7 @@ const AboutOrthodonticsBody = () => {
           </div>
 
           {/* Image Placeholder */}
-          <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center">
+          <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center">
             {/* Replace with actual image */}
             <Image
               src={HeroBg}
@@ -137,7 +133,6 @@ const AboutOrthodonticsBody = () => {
               className="object-cover"
             />
             {/* <div className="text-center p-8">
-              <span className="text-6xl mb-4 block">🦷</span>
               <p className="text-sky-600 font-medium">Image Placeholder</p>
             </div> */}
           </div>
@@ -153,10 +148,10 @@ const AboutOrthodonticsBody = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🤔 Why Orthodontic Treatment is{" "}
+               Why Orthodontic Treatment is{" "}
               <span className="text-sky-600">Necessary</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Orthodontic treatment is often essential for both functional and
               aesthetic reasons. Misaligned teeth or jaws can lead to a range of
               issues:
@@ -171,7 +166,7 @@ const AboutOrthodonticsBody = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500 hover:shadow-xl transition-shadow"
+                className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-sky-500 hover:shadow-md transition-shadow card-treatment card-sky"
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {issue.title}
@@ -201,9 +196,9 @@ const AboutOrthodonticsBody = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-sky-600 to-blue-700 rounded-3xl p-8 md:p-12 text-white mb-12">
+          <div className="bg-sky-700 rounded-2xl p-8 md:p-12 text-white mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-              ⚙️ How Does Orthodontic Treatment Work?
+               How Does Orthodontic Treatment Work?
             </h2>
             <p className="text-xl text-sky-100 text-center max-w-3xl mx-auto">
               Orthodontic treatment works by applying gentle, constant pressure
@@ -220,9 +215,9 @@ const AboutOrthodonticsBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group"
+                className="relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group card-treatment card-sky"
               >
-                <div className="absolute -top-4 left-6 w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">
+                <div className="absolute -top-4 left-6 w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:scale-110 transition-transform">
                   {step.step}
                 </div>
                 <div className="pt-4">
@@ -248,10 +243,10 @@ const AboutOrthodonticsBody = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🌟 How to Make Orthodontic Treatment{" "}
+               How to Make Orthodontic Treatment{" "}
               <span className="text-sky-600">Successful</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Success in orthodontic treatment requires a combination of regular
               orthodontic care and good personal habits.
             </p>
@@ -265,10 +260,9 @@ const AboutOrthodonticsBody = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-sky-50 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-sky-100"
+                className="bg-gradient-to-br from-white to-sky-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-sky-100 card-treatment card-sky"
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-4xl">{tip.icon}</span>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {tip.title}
@@ -287,7 +281,7 @@ const AboutOrthodonticsBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 via-blue-600 to-sky-700 rounded-3xl p-8 md:p-12 text-center text-white"
+          className="bg-sky-700 rounded-2xl p-8 md:p-12 text-center text-white"
         >
           <h2 className="text-2xl gap-2 flex items-center justify-center md:text-3xl font-bold mb-4">
             Ready for a Beautiful, Healthy Smile?{" "}
@@ -302,7 +296,7 @@ const AboutOrthodonticsBody = () => {
           </p>
           <a
             href="/contact-us?ref=appointment-request"
-            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-lg"
+            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-sm"
           >
             Schedule a Consultation
           </a>

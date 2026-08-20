@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 const SchoolItem = ({ item }: { item: any }) => {
   const router = useRouter();
   return (
-    <div className="h-[350px] bg-white duration-200 hover:border-gray-50 hover:shadow-lg border overflow-hidden border-gray-100 rounded-2xl">
+    <div className="h-[350px] bg-white duration-200 hover:border-gray-50 hover:shadow-sm border overflow-hidden border-gray-100 rounded-2xl">
       <Image
         src={item.imageLink}
         alt=""

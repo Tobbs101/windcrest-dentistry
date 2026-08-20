@@ -6,40 +6,35 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import HeroBg from "@/assets/happy-afro-kid-regular-check-up-teeth-dental-clinic.jpg";
 import { Icon } from "@iconify/react";
+import { Check, CircleCheck, TriangleAlert } from "lucide-react";
 
 const quitTips = [
   {
-    icon: "👍",
     title: "Be Supportive & Positive",
     description:
       "Instead of punishing your child for thumb-sucking, give praise when he or she doesn't.",
   },
   {
-    icon: "🩹",
     title: "Use Gentle Reminders",
     description:
       "Put a band-aid on your child's thumb or a sock over the hand at night. Let your little one know this is not a punishment, but a way to help remember to avoid sucking.",
   },
   {
-    icon: "📊",
     title: "Start a Progress Chart",
     description:
       "Let your child put a sticker up every day that he or she doesn't suck. If your child makes it through a week without sucking, he or she gets to choose a prize.",
   },
   {
-    icon: "🧘",
     title: "Address the Anxiety",
     description:
       "If you notice your child sucking when anxious, work on alleviating the anxiety rather than focusing on the thumb-sucking.",
   },
   {
-    icon: "🎮",
     title: "Create Diversions",
     description:
       "Take note of the times your child tends to suck (long car rides, while watching movies) and create diversions during these occasions.",
   },
   {
-    icon: "💬",
     title: "Explain the Consequences",
     description:
       "Explain clearly what might happen to the teeth if he or she keeps thumb-sucking.",
@@ -49,7 +44,6 @@ const quitTips = [
 const warningSignsData = [
   {
     type: "passive",
-    icon: "✅",
     title: "Passive Sucking",
     description:
       "Thumb gently resting inside the mouth – less likely to cause damage.",
@@ -57,7 +51,6 @@ const warningSignsData = [
   },
   {
     type: "aggressive",
-    icon: "⚠️",
     title: "Aggressive Sucking",
     description:
       "Placing pressure on the mouth or teeth – may cause problems with tooth alignment and proper mouth growth.",
@@ -71,9 +64,9 @@ const ThumbSuckingBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="grid lg:grid-cols-2 gap-12 items-center mb-20"
         >
@@ -84,12 +77,12 @@ const ThumbSuckingBody = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-4 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-bold mb-4"
             >
               Childhood Habits
             </motion.span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Thumb <span className="text-pink-500">Sucking</span>
+            <h1 className="text-4xl underline decoration-pink-500 md:text-5xl font-bold text-gray-800 mb-6">
+              Thumb <span>Sucking</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               Along with favorite blankets, teddy bears, and nap time,
@@ -113,7 +106,7 @@ const ThumbSuckingBody = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/3] max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-pink-100 via-pink-200 to-rose-200">
+            <div className="aspect-[4/3] max-w-lg mx-auto rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-pink-100 via-pink-200 to-rose-200">
               <Image
                 src={HeroBg}
                 alt="Happy child at dental checkup"
@@ -133,12 +126,9 @@ const ThumbSuckingBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-lg p-8 md:p-10 border border-gray-100 mb-16"
+          className="bg-white rounded-2xl shadow-sm p-8 md:p-10 border border-gray-100 mb-16 card-treatment card-pink"
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-2xl">👶</span>
-            </div>
             <h2 className="text-2xl font-bold text-gray-800">
               What is Normal Thumb-Sucking Behavior?
             </h2>
@@ -158,9 +148,8 @@ const ThumbSuckingBody = () => {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-100">
+            <div className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-100 card-treatment card-pink">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">🏥</span>
                 <h4 className="font-bold text-gray-800">
                   American Dental Association
                 </h4>
@@ -171,9 +160,9 @@ const ThumbSuckingBody = () => {
                 longer useful to them. However, some children continue sucking
                 beyond the preschool years.
               </p>
-              <div className="mt-4 bg-white rounded-lg p-3 border border-sky-200">
+              <div className="mt-4 bg-white rounded-lg p-3 border border-sky-200 card-treatment card-pink">
                 <p className="text-sky-700 font-medium text-sm">
-                  💡 Studies show that the older a child gets, the lower the
+                   Studies show that the older a child gets, the lower the
                   chances are of continuing the habit.
                 </p>
               </div>
@@ -181,11 +170,8 @@ const ThumbSuckingBody = () => {
           </div>
 
           {/* When to Take Action */}
-          <div className="mt-8 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200">
+          <div className="mt-8 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200 card-treatment card-pink">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">⏰</span>
-              </div>
               <div>
                 <h4 className="font-bold text-gray-800 mb-2">
                   When to Take Action
@@ -209,9 +195,6 @@ const ThumbSuckingBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">👀</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               What Signs Should I Watch For?
             </h2>
@@ -230,7 +213,7 @@ const ThumbSuckingBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`rounded-2xl shadow-lg p-6 border ${
+                className={`rounded-2xl shadow-sm p-6 border card-treatment card-pink ${
                   sign.type === "passive"
                     ? "bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200"
                     : "bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200"
@@ -244,7 +227,11 @@ const ThumbSuckingBody = () => {
                         : "bg-amber-100"
                     }`}
                   >
-                    <span className="text-3xl">{sign.icon}</span>
+                    {sign.type === "passive" ? (
+                      <CircleCheck className="size-7 text-emerald-700" aria-hidden="true" />
+                    ) : (
+                      <TriangleAlert className="size-7 text-amber-700" aria-hidden="true" />
+                    )}
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-800 text-lg mb-2">
@@ -258,11 +245,8 @@ const ThumbSuckingBody = () => {
           </div>
 
           {/* Extended Sucking Warning */}
-          <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-xl p-6 border border-red-200">
+          <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-xl p-6 border border-red-200 card-treatment card-pink">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">⚠️</span>
-              </div>
               <div>
                 <h4 className="font-bold text-gray-800 mb-2">
                   Extended Sucking Effects
@@ -291,9 +275,6 @@ const ThumbSuckingBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">💪</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               How Can I Help My Child Quit Thumb-Sucking?
             </h2>
@@ -311,11 +292,8 @@ const ThumbSuckingBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow"
+                className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow card-treatment card-pink"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-3xl">{tip.icon}</span>
-                </div>
                 <h3 className="font-bold text-gray-800 text-lg mb-3">
                   {tip.title}
                 </h3>
@@ -333,7 +311,7 @@ const ThumbSuckingBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -341,9 +319,6 @@ const ThumbSuckingBody = () => {
           <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-3xl">🏆</span>
-                </div>
                 <p className="text-violet-100 font-medium">
                   Reward System That Works
                 </p>
@@ -367,12 +342,12 @@ const ThumbSuckingBody = () => {
                       key={i}
                       className="w-10 h-10 bg-white/30 rounded-lg flex items-center justify-center text-lg"
                     >
-                      ⭐
+                      <Check className="size-5" aria-hidden="true" />
                     </div>
                   ))}
                 </div>
                 <p className="text-white font-bold text-center">
-                  = Weekly Prize! 🎁
+                  = Weekly Prize!
                 </p>
               </div>
             </div>
@@ -393,12 +368,9 @@ const ThumbSuckingBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 mb-16 border border-emerald-200"
+          className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 mb-16 border border-emerald-200 card-treatment card-pink"
         >
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-2xl">💚</span>
-            </div>
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">
                 Remember: Support is Key
@@ -421,8 +393,8 @@ const ThumbSuckingBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl p-10 border border-pink-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-10 border border-pink-100 card-treatment card-pink">
+            <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <span className="text-5xl text-white">
                 <Icon icon="dashicons:smiley" />
               </span>
@@ -437,7 +409,7 @@ const ThumbSuckingBody = () => {
             </p>
             <Link
               href="/contact-us?ref=appointment-request"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-full hover:shadow-sm transition-all duration-300"
             >
               Schedule Consultation
               <svg

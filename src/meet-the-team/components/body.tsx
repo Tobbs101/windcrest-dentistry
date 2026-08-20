@@ -105,7 +105,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+      className="group relative bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden card-treatment card-sky"
     >
       {/* Image Container */}
       <div className="relative h-72 w-full overflow-hidden bg-gradient-to-br from-sky-100 to-sky-200">
@@ -118,7 +118,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center shadow-lg">
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center shadow-sm">
               <Icon
                 icon={member.gender === "female" ? "map:female" : "map:male"}
                 className="text-white text-6xl"
@@ -142,7 +142,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
         )}
 
         {member.funFact && (
-          <div className="mt-4 p-3 bg-gradient-to-r from-sky-50 to-blue-50 rounded-lg border-l-4 border-sky-500">
+          <div className="mt-4 p-3 bg-gradient-to-r from-sky-50 to-blue-50 rounded-lg border-l-4 border-sky-500 card-treatment card-sky">
             <p className="text-xs text-gray-500 font-semibold uppercase mb-1">
               Fun Fact
             </p>
@@ -169,11 +169,11 @@ const MeetTheBody = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-customPurple/10 text-customPurple rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
             Our Amazing Staff
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Meet Our <span className="text-sky-600">Dedicated Team</span>
+          <h2 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Meet Our Dedicated Team
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Our friendly and experienced team is committed to providing the best
@@ -191,13 +191,13 @@ const MeetTheBody = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="inline-flex items-center gap-4 p-6 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl shadow-xl">
+          <div className="inline-flex items-center gap-4 p-6 bg-sky-600 rounded-2xl shadow-md">
             <div className="text-left text-white">
               <h3 className="text-xl font-bold">Want to Join Our Team?</h3>
               <p className="text-sky-100 text-sm">

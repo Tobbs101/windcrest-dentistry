@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
+import { Clock3, MapPin, Phone, UsersRound } from "lucide-react";
 
 const officeHours = [
   { day: "Monday", hours: "8:00am to 5:00pm" },
@@ -25,17 +26,17 @@ const OfficeLocation = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
-            San Antonio Office Location
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
+            Visit Our Office
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            San Antonio <span className="text-sky-600">Office Location</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            San Antonio Office Location
           </h1>
         </motion.div>
 
@@ -50,9 +51,10 @@ const OfficeLocation = () => {
             className="space-y-8"
           >
             {/* Doctors */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100">
+            <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm card-treatment card-sky">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                <span className="text-3xl">👨‍⚕️</span> Our Doctors
+                <UsersRound className="size-6 text-sky-700" aria-hidden="true" />
+                Our Doctors
               </h2>
               <div className="">
                 <p className="text-lg hover:text-customPurple text-gray-700 font-medium">
@@ -88,9 +90,10 @@ const OfficeLocation = () => {
             </div>
 
             {/* Address */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100">
+            <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm card-treatment card-sky">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                <span className="text-3xl">📍</span> Address
+                <MapPin className="size-6 text-sky-700" aria-hidden="true" />
+                Address
               </h2>
               <address className="not-italic text-lg text-gray-700 leading-relaxed">
                 5500 Walzem Rd.
@@ -100,9 +103,10 @@ const OfficeLocation = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100">
+            <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm card-treatment card-sky">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                <span className="text-3xl">📞</span> Contact
+                <Phone className="size-6 text-sky-700" aria-hidden="true" />
+                Contact
               </h2>
               <div className="space-y-3">
                 <p className="text-lg text-gray-700">
@@ -134,9 +138,10 @@ const OfficeLocation = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-br from-sky-600 to-blue-700 rounded-2xl p-8 shadow-xl text-white h-full">
+            <div className="h-full rounded-xl bg-sky-800 p-8 text-white shadow-sm card-treatment card-sky">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <span className="text-3xl">🕐</span> Office Hours
+                <Clock3 className="size-6" aria-hidden="true" />
+                Office Hours
               </h2>
               <div className="space-y-4">
                 {officeHours.map((schedule, index) => (
@@ -163,7 +168,7 @@ const OfficeLocation = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: true }}
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-lg w-full justify-center"
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-sky-700 shadow-sm transition-colors hover:bg-sky-50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +202,7 @@ const OfficeLocation = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden shadow-xl border-4 border-white"
+          className="overflow-hidden rounded-xl border border-gray-200 shadow-sm card-treatment card-sky"
         >
           <iframe
             src={googleMapsEmbedUrl}
@@ -218,7 +223,7 @@ const OfficeLocation = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-sky-500 via-blue-600 to-sky-700 rounded-3xl p-8 md:p-12 text-center text-white"
+          className="mt-16 rounded-xl bg-sky-800 p-8 text-center text-white md:p-12"
         >
           <h2 className="text-2xl md:text-3xl flex items-center justify-center gap-2 font-bold mb-4">
             Ready to Visit Us?{" "}
@@ -230,7 +235,7 @@ const OfficeLocation = () => {
           </p>
           <a
             href="tel:2106574641"
-            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-lg"
+            className="inline-block rounded-lg bg-white px-8 py-4 font-semibold text-sky-700 shadow-sm transition-colors hover:bg-sky-50"
           >
             Call (210) 657-4641
           </a>

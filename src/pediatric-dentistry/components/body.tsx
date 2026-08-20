@@ -32,18 +32,15 @@ const teethTimeline = [
 
 const preventionTips = [
   {
-    icon: "🦷",
     title: "Regular Checkups",
     description:
       "Visit the dentist every six months for cleanings and checkups",
   },
   {
-    icon: "💧",
     title: "Fluoride Treatments",
     description: "Twice a year treatments to keep teeth their strongest",
   },
   {
-    icon: "🛡️",
     title: "Tooth Sealants",
     description: "Seal deep grooves to prevent decay in hard-to-reach areas",
   },
@@ -55,9 +52,9 @@ const PediatricDentistryBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="grid lg:grid-cols-2 gap-12 items-center mb-20"
         >
@@ -68,12 +65,12 @@ const PediatricDentistryBody = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-4 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-bold mb-4"
             >
               For Little Smiles
             </motion.span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Pediatric <span className="text-pink-500">Dentistry</span>
+            <h1 className="text-4xl underline decoration-pink-500 md:text-5xl font-bold text-gray-800 mb-6">
+              Pediatric <span>Dentistry</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               A child&apos;s first visit to the dentist should be enjoyable.
@@ -96,7 +93,7 @@ const PediatricDentistryBody = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/3] max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-pink-100 via-pink-200 to-rose-200">
+            <div className="aspect-[4/3] max-w-lg mx-auto rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-pink-100 via-pink-200 to-rose-200">
               <Image
                 src={HeroBg}
                 alt="Child at pediatric dentist"
@@ -116,7 +113,7 @@ const PediatricDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 to-blue-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-sky-600 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -124,9 +121,6 @@ const PediatricDentistryBody = () => {
           <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-3xl">🏥</span>
-                </div>
                 <p className="text-sky-100 font-medium">
                   American Academy of Pediatric Dentistry recommends...
                 </p>
@@ -145,7 +139,6 @@ const PediatricDentistryBody = () => {
             <div className="flex justify-center">
               <div className="w-40 h-40 bg-white/20 rounded-full flex items-center justify-center">
                 <div className="text-center">
-                  <span className="text-6xl block mb-2">🎂</span>
                   <p className="text-white font-bold">1st Birthday</p>
                 </div>
               </div>
@@ -159,13 +152,10 @@ const PediatricDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-16 border border-amber-200"
+          className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-16 border border-amber-200 card-treatment card-pink"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-3xl">🎉</span>
-              </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-800">
                   Getting to know your teeth is fun!
@@ -178,7 +168,7 @@ const PediatricDentistryBody = () => {
             <a
               href="/files/dynamite-dental-fun-kit.pdf"
               download="dynamite-dental-fun-kit.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold rounded-xl hover:shadow-sm transition-all duration-300"
             >
               Download Fun Kit
               <svg
@@ -207,18 +197,15 @@ const PediatricDentistryBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">🦷</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               When New Teeth Arrive
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 mb-10">
-            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 card-treatment card-pink">
               <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span className="text-2xl">👶</span> Baby Teeth Eruption
+                Baby Teeth Eruption
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Your child&apos;s first primary, or &quot;baby,&quot; teeth will
@@ -226,7 +213,7 @@ const PediatricDentistryBody = () => {
                 continue to erupt until about age three. During this time, your
                 child&apos;s gums may feel tender and sore.
               </p>
-              <div className="bg-pink-50 rounded-xl p-4 border border-pink-100">
+              <div className="bg-pink-50 rounded-xl p-4 border border-pink-100 card-treatment card-pink">
                 <p className="text-pink-800 font-medium mb-2">
                   To help alleviate discomfort:
                 </p>
@@ -237,9 +224,9 @@ const PediatricDentistryBody = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 card-treatment card-pink">
               <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span className="text-2xl">😁</span> Permanent Teeth
+                Permanent Teeth
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 Your child&apos;s primary teeth are shed at various times
@@ -259,7 +246,7 @@ const PediatricDentistryBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-5 border border-pink-100 text-center"
+                className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-5 border border-pink-100 text-center card-treatment card-pink"
               >
                 <p className="text-pink-600 font-bold text-lg mb-1">
                   {item.age}
@@ -277,12 +264,9 @@ const PediatricDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-lg p-8 md:p-10 border border-gray-100 mb-16"
+          className="bg-white rounded-2xl shadow-sm p-8 md:p-10 border border-gray-100 mb-16 card-treatment card-pink"
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-2xl">✨</span>
-            </div>
             <h2 className="text-2xl font-bold text-gray-800">
               Adopting Healthy Oral Hygiene Habits
             </h2>
@@ -292,7 +276,7 @@ const PediatricDentistryBody = () => {
             {/* Examining Teeth */}
             <div>
               <h3 className="font-bold text-gray-800 text-lg mb-3 flex items-center gap-2">
-                <span>🔍</span> Regular Examination
+                Regular Examination
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 As your child&apos;s teeth erupt, be sure to examine them every
@@ -301,9 +285,9 @@ const PediatricDentistryBody = () => {
                 attack a new tooth, so take care that your child brushes after
                 feeding or eating.
               </p>
-              <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+              <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100 card-treatment card-pink">
                 <p className="text-emerald-700 font-medium">
-                  💡 We recommend brushing two times a day for optimal oral
+                   We recommend brushing two times a day for optimal oral
                   hygiene.
                 </p>
               </div>
@@ -312,16 +296,16 @@ const PediatricDentistryBody = () => {
             {/* Brushing */}
             <div>
               <h3 className="font-bold text-gray-800 text-lg mb-3 flex items-center gap-2">
-                <span>🪥</span> Brushing Tips
+                Brushing Tips
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Brushing can be fun, and your child should brush as soon as the
                 first tooth arrives. Parents should brush with a soft-bristled
                 toothbrush and a pea-sized amount of toothpaste.
               </p>
-              <div className="bg-amber-50 rounded-xl p-4 border border-amber-100">
+              <div className="bg-amber-50 rounded-xl p-4 border border-amber-100 card-treatment card-pink">
                 <p className="text-amber-700 font-medium text-sm">
-                  ⚠️ For children younger than two, do not use fluoride
+                   For children younger than two, do not use fluoride
                   toothpaste unless advised by your dentist or healthcare
                   professional.
                 </p>
@@ -330,9 +314,9 @@ const PediatricDentistryBody = () => {
 
             {/* Flossing */}
             <div className="md:col-span-2">
-              <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-100">
+              <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-100 card-treatment card-pink">
                 <h3 className="font-bold text-gray-800 text-lg mb-2 flex items-center gap-2">
-                  <span>🧵</span> Flossing
+                  Flossing
                 </h3>
                 <p className="text-gray-600">
                   Flossing is also a part of good oral hygiene habits, and your
@@ -354,9 +338,6 @@ const PediatricDentistryBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">🛡️</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Preventing Tooth Decay with Regular Checkups
             </h2>
@@ -378,11 +359,8 @@ const PediatricDentistryBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 text-center hover:shadow-xl transition-shadow"
+                className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 text-center hover:shadow-md transition-shadow card-treatment card-pink"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-violet-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">{tip.icon}</span>
-                </div>
                 <h3 className="font-bold text-gray-800 text-lg mb-2">
                   {tip.title}
                 </h3>
@@ -395,9 +373,6 @@ const PediatricDentistryBody = () => {
           <div className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl p-8 text-white text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="relative z-10">
-              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">📅</span>
-              </div>
               <h3 className="text-2xl font-bold mb-2">Every 6 Months</h3>
               <p className="text-violet-100 max-w-xl mx-auto">
                 Your child should visit the dentist every six months for regular
@@ -416,8 +391,8 @@ const PediatricDentistryBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl p-10 border border-pink-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-10 border border-pink-100 card-treatment card-pink">
+            <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <span className="text-5xl text-white">
                 <Icon icon="dashicons:smiley" />
               </span>
@@ -431,7 +406,7 @@ const PediatricDentistryBody = () => {
             </p>
             <Link
               href="/contact-us?ref=appointment-request"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-full hover:shadow-sm transition-all duration-300"
             >
               Schedule Appointment
               <svg

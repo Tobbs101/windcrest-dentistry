@@ -11,7 +11,6 @@ const emergencyTypes = [
   {
     id: "bitten-lip-tongue",
     title: "Bitten Lip or Tongue",
-    icon: "👅",
     color: "pink",
     steps: [
       "Clean the bite gently with water",
@@ -23,7 +22,6 @@ const emergencyTypes = [
   {
     id: "object-caught",
     title: "Object Caught In Teeth",
-    icon: "🔍",
     color: "amber",
     steps: [
       "Use dental floss to gently remove the object",
@@ -34,7 +32,6 @@ const emergencyTypes = [
   {
     id: "broken-chipped",
     title: "Broken, Chipped, or Fractured Tooth",
-    icon: "⚡",
     color: "violet",
     steps: [
       "Have your child rinse their mouth with warm water",
@@ -46,7 +43,6 @@ const emergencyTypes = [
   {
     id: "knocked-out",
     title: "Knocked Out Tooth",
-    icon: "💥",
     color: "red",
     steps: [
       "Find the tooth and rinse it with water (no soap)",
@@ -59,7 +55,6 @@ const emergencyTypes = [
   {
     id: "loose-tooth",
     title: "Loose Tooth",
-    icon: "🦷",
     color: "teal",
     steps: [
       "If your child has a very loose tooth, it should be removed",
@@ -69,7 +64,6 @@ const emergencyTypes = [
   {
     id: "toothache",
     title: "Toothache",
-    icon: "😣",
     color: "orange",
     steps: [
       "Rinse their mouth with warm water",
@@ -83,7 +77,6 @@ const emergencyTypes = [
   {
     id: "broken-jaw",
     title: "Broken Jaw",
-    icon: "🚨",
     color: "rose",
     steps: [
       "Use a cold compress to reduce swelling",
@@ -95,30 +88,25 @@ const emergencyTypes = [
 
 const preventionTips = [
   {
-    icon: "🏠",
     title: "Child-Proof Your House",
     description: "Prevent falls by making your home safe for children.",
   },
   {
-    icon: "🍿",
     title: "Avoid Hard Foods",
     description:
       "Don't let your child chew on ice, popcorn kernels, or other hard foods.",
   },
   {
-    icon: "🚗",
     title: "Car Safety",
     description:
       "Always use car seats for young children and require seat belts for older children.",
   },
   {
-    icon: "🛡️",
     title: "Wear a Mouthguard",
     description:
       "If your child plays contact sports, have them wear a mouthguard.",
   },
   {
-    icon: "🪥",
     title: "Regular Oral Care",
     description:
       "Prevent toothaches with regular brushing, flossing, and visits to our office.",
@@ -175,9 +163,9 @@ const PediatricDentalEmergenciesBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="grid lg:grid-cols-2 gap-12 items-center mb-20"
         >
@@ -188,12 +176,12 @@ const PediatricDentalEmergenciesBody = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-4 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold mb-4"
             >
               Emergency Care
             </motion.span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Pediatric Dental <span className="text-red-500">Emergencies</span>
+            <h1 className="text-4xl underline decoration-red-500 md:text-5xl font-bold text-gray-800 mb-6">
+              Pediatric Dental <span>Emergencies</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               If you face a dental emergency, give us a call immediately. If you
@@ -216,7 +204,7 @@ const PediatricDentalEmergenciesBody = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/3] max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-red-100 via-red-200 to-rose-200">
+            <div className="aspect-[4/3] max-w-lg mx-auto rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-red-100 via-red-200 to-rose-200">
               <Image
                 src={HeroBg}
                 alt="Pediatric dental emergency care"
@@ -236,16 +224,13 @@ const PediatricDentalEmergenciesBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-red-500 to-rose-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-gradient-to-r from-red-500 to-rose-600 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-6">
-              <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <span className="text-5xl">📞</span>
-              </div>
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-2">
                   Dental Emergency?
@@ -257,7 +242,7 @@ const PediatricDentalEmergenciesBody = () => {
             </div>
             <Link
               href="/contact-us?ref=emergency"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 font-bold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 font-bold rounded-full hover:shadow-sm transition-all duration-300"
             >
               Contact Us Now
               <svg
@@ -286,9 +271,6 @@ const PediatricDentalEmergenciesBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">🚨</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Emergency Situations & What To Do
             </h2>
@@ -308,14 +290,13 @@ const PediatricDentalEmergenciesBody = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className={`bg-gradient-to-br ${colors.bg} rounded-2xl border ${colors.border} overflow-hidden`}
+                  className={`bg-gradient-to-br ${colors.bg} rounded-2xl border ${colors.border} overflow-hidden card-treatment card-red`}
                 >
                   {/* Header */}
                   <div
                     className={`bg-gradient-to-r ${colors.header} px-5 py-3`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">{emergency.icon}</span>
                       <h3 className="text-lg font-bold text-white">
                         {emergency.title}
                       </h3>
@@ -348,16 +329,13 @@ const PediatricDentalEmergenciesBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
-                <span className="text-3xl">🛡️</span>
-              </div>
               <h2 className="text-3xl font-bold">Avoiding Injury</h2>
             </div>
 
@@ -376,7 +354,6 @@ const PediatricDentalEmergenciesBody = () => {
                   viewport={{ once: true }}
                   className="bg-white/10 backdrop-blur-sm rounded-xl p-4"
                 >
-                  <span className="text-2xl block mb-2">{tip.icon}</span>
                   <h4 className="font-bold text-white mb-1">{tip.title}</h4>
                   <p className="text-emerald-200 text-sm">{tip.description}</p>
                 </motion.div>
@@ -391,12 +368,9 @@ const PediatricDentalEmergenciesBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl p-8 mb-16 border border-sky-200"
+          className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl p-8 mb-16 border border-sky-200 card-treatment card-red"
         >
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-2xl">🏆</span>
-            </div>
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">
                 Custom-Fitted Mouthguards
@@ -417,12 +391,9 @@ const PediatricDentalEmergenciesBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-16 border border-amber-200"
+          className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-16 border border-amber-200 card-treatment card-red"
         >
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-2xl">📋</span>
-            </div>
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">
                 Keep This Reference Handy
@@ -444,8 +415,8 @@ const PediatricDentalEmergenciesBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-red-50 to-rose-50 rounded-3xl p-10 border border-red-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-red-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-gradient-to-br from-red-50 to-rose-50 rounded-2xl p-10 border border-red-100 card-treatment card-red">
+            <div className="w-20 h-20 bg-gradient-to-br from-red-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <span className="text-5xl text-white">
                 <Icon icon="dashicons:smiley" />
               </span>
@@ -459,7 +430,7 @@ const PediatricDentalEmergenciesBody = () => {
             </p>
             <Link
               href="/contact-us?ref=emergency"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-rose-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-rose-500 text-white font-semibold rounded-full hover:shadow-sm transition-all duration-300"
             >
               Contact Emergency Line
               <svg

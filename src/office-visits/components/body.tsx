@@ -7,17 +7,14 @@ import { Icon } from "@iconify/react";
 
 const whatToBring = [
   {
-    icon: "📋",
     title: "Patient Information Form",
     description: "Your completed patient information form",
   },
   {
-    icon: "💳",
     title: "Insurance Card",
     description: "Your child's insurance card",
   },
   {
-    icon: "🪪",
     title: "Parent/Guardian ID",
     description: "Valid identification for the parent or guardian",
   },
@@ -28,27 +25,23 @@ const visitSteps = [
     step: 1,
     title: "Review Forms",
     description: "We will review your dental and medical history forms",
-    icon: "📝",
   },
   {
     step: 2,
     title: "X-Rays",
     description: "Take X-rays of your teeth and mouth",
-    icon: "🔬",
   },
   {
     step: 3,
     title: "Consultation",
     description:
       "The doctor will discuss your X-rays and create your individual treatment plan",
-    icon: "👨‍⚕️",
   },
   {
     step: 4,
     title: "Cleaning",
     description:
       "At your next visit, our hygienists will clean and polish your teeth",
-    icon: "✨",
   },
 ];
 
@@ -58,9 +51,9 @@ const OfficeVisitsBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -69,14 +62,14 @@ const OfficeVisitsBody = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4"
           >
             Your Visit
           </motion.span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Office <span className="text-sky-600">Visits</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Office <span>Visits</span>
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
             Our practice is committed to providing you and your family with
             safe, gentle, high-quality dental care. We understand that you, or
             your child, may feel anxious about visiting the dentist. We are
@@ -92,7 +85,7 @@ const OfficeVisitsBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 to-blue-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-sky-600 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -138,13 +131,13 @@ const OfficeVisitsBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow"
+                className="relative bg-white rounded-2xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow card-treatment card-sky"
               >
                 <div className="absolute -top-4 left-6 w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                   {item.step}
                 </div>
                 <div className="pt-4">
-                  {/* <span className="text-4xl mb-4 block">{item.icon}</span> */}
+                  {/* */}
                   <h3 className="font-bold text-gray-800 text-lg mb-2">
                     {item.title}
                   </h3>
@@ -161,12 +154,9 @@ const OfficeVisitsBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 md:p-10 mb-16 border border-amber-100"
+          className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 md:p-10 mb-16 border border-amber-100 card-treatment card-sky"
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-2xl">🎒</span>
-            </div>
             <div>
               <h2 className="text-2xl font-bold text-gray-800">
                 What To Bring
@@ -185,9 +175,9 @@ const OfficeVisitsBody = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow card-treatment card-sky"
               >
-                {/* <span className="text-4xl mb-4 block">{item.icon}</span> */}
+                {/* */}
                 <h3 className="font-bold text-gray-800 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </motion.div>
@@ -203,7 +193,7 @@ const OfficeVisitsBody = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
+            className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 card-treatment card-sky"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center">
@@ -229,9 +219,8 @@ const OfficeVisitsBody = () => {
               Regular checkups are an important part of maintaining a healthy
               smile!
             </p>
-            <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
+            <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-100 card-treatment card-sky">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl">🦷</span>
                 <p className="font-semibold text-emerald-800">
                   ADA Recommendation
                 </p>
@@ -250,7 +239,7 @@ const OfficeVisitsBody = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
+            className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 card-treatment card-sky"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-violet-400 to-purple-500 rounded-xl flex items-center justify-center">
@@ -276,7 +265,7 @@ const OfficeVisitsBody = () => {
               We understand that you have a busy schedule, so when you&apos;re
               preparing to visit the dentist, please remember:
             </p>
-            <div className="bg-violet-50 rounded-xl p-5 border border-violet-100">
+            <div className="bg-violet-50 rounded-xl p-5 border border-violet-100 card-treatment card-sky">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-lg">45-90</span>
@@ -300,7 +289,7 @@ const OfficeVisitsBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-gray-50 to-sky-50 rounded-3xl p-10 border border-sky-100">
+          <div className="bg-gradient-to-br from-gray-50 to-sky-50 rounded-2xl p-10 border border-sky-100 card-treatment card-sky">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Ready to Schedule Your Visit?
             </h2>
@@ -310,7 +299,7 @@ const OfficeVisitsBody = () => {
             </p>
             <Link
               href="/contact-us?ref=appointment-request"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-sky-600 text-white font-semibold rounded-full hover:shadow-sm transition-all duration-300"
             >
               Schedule Appointment
               <svg

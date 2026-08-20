@@ -125,14 +125,14 @@ export const generatePartnershipConfirmationEmail = (data: {
           <div class="logo">Limit Breakers</div>
           <div class="tagline">Empowering children to reach their full potential</div>
         </div>
-        
+
         <div class="content">
           <div class="greeting">Hello ${data.firstName} ${data.lastName},</div>
-          
+
           <div class="message">
             Thank you for submitting your partnership application with Limit Breakers! We're excited to have you join our community of dedicated parents and learners.
           </div>
-          
+
           <div class="details">
             <div class="detail-row">
               <span class="detail-label">Application Status:</span>
@@ -153,7 +153,7 @@ export const generatePartnershipConfirmationEmail = (data: {
               )}</span>
             </div>
           </div>
-          
+
           <div class="next-steps">
             <h3>What Happens Next?</h3>
             <ul>
@@ -163,19 +163,19 @@ export const generatePartnershipConfirmationEmail = (data: {
               <li>Once approved, you'll receive access to our partnership resources</li>
             </ul>
           </div>
-          
+
           <div class="message">
             We're committed to providing personalised support for your child's educational journey. If you have any questions in the meantime, please don't hesitate to reach out.
           </div>
         </div>
-        
+
         <div class="footer">
           <div>Best regards,</div>
           <div>The Limit Breakers Team</div>
           <div class="contact-info">
-            <div>📧 <a href="mailto:info@limitbreakers.co.uk">info@limitbreakers.co.uk</a></div>
-            <div>📱 <a href="tel:+447832314114">+44 783 231 4114</a></div>
-            <div>🌐 <a href="https://limitbreakers.co.uk">limitbreakers.co.uk</a></div>
+            <div> <a href="mailto:info@limitbreakers.co.uk">info@limitbreakers.co.uk</a></div>
+            <div> <a href="tel:+447832314114">+44 783 231 4114</a></div>
+            <div> <a href="https://limitbreakers.co.uk">limitbreakers.co.uk</a></div>
           </div>
         </div>
       </div>
@@ -392,7 +392,7 @@ export const generateAssessmentConfirmationEmail = (data: {
           </div>
 
           <div class="message">
-            We’re excited to meet your child and support them in achieving academic excellence.  
+            We’re excited to meet your child and support them in achieving academic excellence.
             Thank you for choosing Limit Breakers!
           </div>
         </div>
@@ -401,9 +401,9 @@ export const generateAssessmentConfirmationEmail = (data: {
           <div>Warm regards,</div>
           <div>The Limit Breakers Team</div>
           <div class="contact-info">
-            <div>📧 <a href="mailto:info@limitbreakers.co.uk">info@limitbreakers.co.uk</a></div>
-            <div>📱 <a href="tel:+447832314114">+44 783 231 4114</a></div>
-            <div>🌐 <a href="https://limitbreakers.co.uk">limitbreakers.co.uk</a></div>
+            <div> <a href="mailto:info@limitbreakers.co.uk">info@limitbreakers.co.uk</a></div>
+            <div> <a href="tel:+447832314114">+44 783 231 4114</a></div>
+            <div> <a href="https://limitbreakers.co.uk">limitbreakers.co.uk</a></div>
           </div>
         </div>
       </div>
@@ -444,27 +444,27 @@ export const generateAssessmentReminderOct25 = () => {
       </head>
       <body>
         <div class="container">
-          <div class="message">🌟 <strong>Welcome to the Limit Breakers & WCI 11+ Prep Community!</strong> 🌟</div>
+          <div class="message"> <strong>Welcome to the Limit Breakers & WCI 11+ Prep Community!</strong> </div>
 
           <div class="message">We're thrilled to have you and your child on this exciting journey toward 11+ success!</div>
 
           <div class="message">Here are the key details for your <strong>Initial Assessment & Parent Induction</strong> this weekend:</div>
 
           <div class="message">
-            📅 <strong>Date:</strong> Saturday, 25th October 2025<br>
-            🕚 <strong>Start Time:</strong> 11:00 AM (please arrive by <strong>10:45 AM</strong> for registration)
+             <strong>Date:</strong> Saturday, 25th October 2025<br>
+             <strong>Start Time:</strong> 11:00 AM (please arrive by <strong>10:45 AM</strong> for registration)
           </div>
 
           <div class="message">
-            🧒 <strong>Children's Assessment</strong><br>
-            📍 <strong>Location:</strong> 10–12 Classroom<br>
+             <strong>Children's Assessment</strong><br>
+             <strong>Location:</strong> 10–12 Classroom<br>
             Your child will complete the 11+ Initial Assessment to help us understand their current strengths and guide their learning plan.<br>
-            Please bring: ✏️ 2 pencils • 🩶 eraser • sharpener • 📏 ruler • 💧 water bottle
+            Please bring:  2 pencils •  eraser • sharpener •  ruler •  water bottle
           </div>
 
           <div class="message">
-            👨‍👩‍👧 <strong>Parent Induction Session</strong><br>
-            📍 <strong>Location:</strong> Teens Church<br>
+             <strong>Parent Induction Session</strong><br>
+             <strong>Location:</strong> Teens Church<br>
             While the children are taking their assessment, parents will attend an important session covering:
           </div>
 
@@ -477,17 +477,17 @@ export const generateAssessmentReminderOct25 = () => {
           </ul>
 
           <div class="message">
-            🔗 <strong>Join our Parent Community Chat:</strong> 
+             <strong>Join our Parent Community Chat:</strong>
             <a href="https://chat.whatsapp.com/GB9Bj9a0eEy3DUAxa59E66?mode=wwt" class="highlight">Join WhatsApp Group</a><br>
             Stay connected for reminders, updates, and learning resources.
           </div>
 
           <div class="message">
-            We can't wait to meet you all and begin this incredible journey together — helping every child grow in 
+            We can't wait to meet you all and begin this incredible journey together — helping every child grow in
             <em>confidence, skill, and success</em>.
           </div>
 
-          <div class="message"><strong>✨ Let's keep breaking limits—together! ✨</strong></div>
+          <div class="message"><strong> Let's keep breaking limits—together! </strong></div>
         </div>
       </body>
     </html>
@@ -526,27 +526,27 @@ export const generateAssessmentReminderOct26 = () => {
       </head>
       <body>
         <div class="container">
-          <div class="message">🌟 <strong>Welcome to the Limit Breakers & WCI 11+ Prep Community!</strong> 🌟</div>
+          <div class="message"> <strong>Welcome to the Limit Breakers & WCI 11+ Prep Community!</strong> </div>
 
           <div class="message">We're so excited to have you and your child joining us on the journey to 11+ success!</div>
 
           <div class="message">Here are the details for your <strong>Initial Assessment & Parent Induction</strong> this Sunday:</div>
 
           <div class="message">
-            📅 <strong>Date:</strong> Sunday, 26th October 2025<br>
-            🕑 <strong>Start Time:</strong> 2:00 PM (please arrive by <strong>1:45 PM</strong> for registration)
+             <strong>Date:</strong> Sunday, 26th October 2025<br>
+             <strong>Start Time:</strong> 2:00 PM (please arrive by <strong>1:45 PM</strong> for registration)
           </div>
 
           <div class="message">
-            🧒 <strong>Children's Assessment</strong><br>
-            📍 <strong>Location:</strong> 10–12 Classroom<br>
+             <strong>Children's Assessment</strong><br>
+             <strong>Location:</strong> 10–12 Classroom<br>
             Your child will complete their 11+ Initial Assessment — the first step in shaping their personalised learning journey.<br>
-            Please bring: ✏️ 2 pencils • 🩶 eraser • sharpener • 📏 ruler • 💧 water bottle
+            Please bring:  2 pencils •  eraser • sharpener •  ruler •  water bottle
           </div>
 
           <div class="message">
-            👨‍👩‍👧 <strong>Parent Induction Session</strong><br>
-            📍 <strong>Location:</strong> Teens Church<br>
+             <strong>Parent Induction Session</strong><br>
+             <strong>Location:</strong> Teens Church<br>
             While the children are taking their assessment, parents will attend an engaging induction session covering:
           </div>
 
@@ -559,14 +559,14 @@ export const generateAssessmentReminderOct26 = () => {
           </ul>
 
           <div class="message">
-            🔗 <strong>Join our Parent Community Chat:</strong> 
+             <strong>Join our Parent Community Chat:</strong>
             <a href="https://chat.whatsapp.com/GB9Bj9a0eEy3DUAxa59E66?mode=wwt" class="highlight">Join WhatsApp Group</a><br>
             Stay connected for updates, resources, and announcements.
           </div>
 
           <div class="message">Thank you for being part of this inspiring mission to equip every child for success.</div>
 
-          <div class="message"><strong>✨ Let's keep breaking limits—together! ✨</strong></div>
+          <div class="message"><strong> Let's keep breaking limits—together! </strong></div>
         </div>
       </body>
     </html>
@@ -704,14 +704,14 @@ export const generateTeamNotificationEmail = (data: {
           <div class="logo">Limit Breakers</div>
           <div class="tagline">New Partnership Application Received</div>
         </div>
-        
+
         <div class="content">
           <div class="greeting">Hi Team,</div>
-          
+
           <div class="message">
             A new family has applied for partnership with Limit Breakers! Please review their application and follow up within 24-48 hours.
           </div>
-          
+
           <div class="details">
             <div class="detail-row">
               <span class="detail-label">Parent Name:</span>
@@ -754,17 +754,17 @@ export const generateTeamNotificationEmail = (data: {
               <span class="detail-value">${data.primaryLanguage}</span>
             </div>
           </div>
-          
+
           <div class="action-required">
             <h3>Action Required</h3>
             <p>Please review the complete application details in your <a href="https://docs.google.com/spreadsheets/d/14jcishoRzb-MnrA6Qb_WIfSBpivpLUxpHejuhAxW594/edit?pli=1&gid=0#gid=0" target="_blank" class="sheets-link">Google Sheets</a> and reach out to the family within 24-48 hours to discuss next steps.</p>
           </div>
-          
+
           <div class="message">
             This notification was sent automatically when the partnership application was submitted. All detailed information is available in your <a href="https://docs.google.com/spreadsheets/d/14jcishoRzb-MnrA6Qb_WIfSBpivpLUxpHejuhAxW594/edit?pli=1&gid=0#gid=0" target="_blank" class="sheets-link">Google Sheets</a>.
           </div>
         </div>
-        
+
         <div class="footer">
           <div>Best regards,</div>
           <div>Limit Breakers System</div>

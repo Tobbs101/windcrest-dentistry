@@ -9,25 +9,21 @@ import { Icon } from "@iconify/react";
 
 const idealCandidates = [
   {
-    icon: "🧩",
     title: "Special Needs Children",
     description:
       "Physically, emotionally, or developmentally challenged children who are unable to hold still for dental treatment.",
   },
   {
-    icon: "😮",
     title: "Severe Gag Reflex",
     description:
       "Children that have a severe gag reflex that makes traditional dental treatment difficult.",
   },
   {
-    icon: "🏥",
     title: "Complex Medical Conditions",
     description:
       "Children with complex medical conditions that make it unsafe to receive dental care in an office situation.",
   },
   {
-    icon: "💉",
     title: "Anesthetic Challenges",
     description:
       "Children who have allergies to local anesthetics or experience difficulty achieving numbness.",
@@ -37,21 +33,18 @@ const idealCandidates = [
 const preparationSteps = [
   {
     step: 1,
-    icon: "🍽️",
     title: "Food & Fluid Guidelines",
     description:
       "Follow the guidelines given to you by the doctor regarding food and fluid intake before and after the procedure.",
   },
   {
     step: 2,
-    icon: "💬",
     title: "Discuss with Your Child",
     description:
       "Discuss the procedure with your child using simple terms that he or she can understand.",
   },
   {
     step: 3,
-    icon: "🏠",
     title: "Rest at Home",
     description:
       "Let your child rest quietly at home after the procedure. He or she will probably be ready to resume their normal schedule the next day.",
@@ -64,9 +57,9 @@ const PediatricHospitalDentistryBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="grid lg:grid-cols-2 gap-12 items-center mb-20"
         >
@@ -77,13 +70,13 @@ const PediatricHospitalDentistryBody = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-4 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-bold mb-4"
             >
               Specialized Care
             </motion.span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h1 className="text-4xl underline decoration-teal-500 md:text-5xl font-bold text-gray-800 mb-6">
               Pediatric Hospital{" "}
-              <span className="text-teal-500">Dentistry</span>
+              <span>Dentistry</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               If your child cannot receive dental care in a traditional dental
@@ -106,7 +99,7 @@ const PediatricHospitalDentistryBody = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/3] max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-teal-100 via-teal-200 to-emerald-200">
+            <div className="aspect-[4/3] max-w-lg mx-auto rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-teal-100 via-teal-200 to-emerald-200">
               <Image
                 src={HeroBg}
                 alt="Child receiving hospital dental care"
@@ -126,15 +119,12 @@ const PediatricHospitalDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-teal-500 to-emerald-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-gradient-to-r from-teal-500 to-emerald-600 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-              <span className="text-5xl">🏥</span>
-            </div>
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-3">
                 Understanding Your Child&apos;s Unique Needs
@@ -158,9 +148,6 @@ const PediatricHospitalDentistryBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">❓</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Is Hospital Dentistry Right for My Child?
             </h2>
@@ -178,12 +165,9 @@ const PediatricHospitalDentistryBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow"
+                className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow card-treatment card-violet"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-violet-100 to-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-3xl">{candidate.icon}</span>
-                  </div>
                   <div>
                     <h3 className="font-bold text-gray-800 text-lg mb-2">
                       {candidate.title}
@@ -203,12 +187,9 @@ const PediatricHospitalDentistryBody = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-8 bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-6 border border-violet-200"
+            className="mt-8 bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-6 border border-violet-200 card-treatment card-violet"
           >
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">💡</span>
-              </div>
               <div>
                 <h4 className="font-bold text-gray-800 mb-1">Best Option</h4>
                 <p className="text-gray-600">
@@ -226,12 +207,9 @@ const PediatricHospitalDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-lg p-8 md:p-10 border border-gray-100 mb-16"
+          className="bg-white rounded-2xl shadow-sm p-8 md:p-10 border border-gray-100 mb-16 card-treatment card-violet"
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-2xl">💤</span>
-            </div>
             <h2 className="text-2xl font-bold text-gray-800">
               General Anesthesia
             </h2>
@@ -240,7 +218,7 @@ const PediatricHospitalDentistryBody = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-gray-800 text-lg mb-3 flex items-center gap-2">
-                <span>🌙</span> What is General Anesthesia?
+                What is General Anesthesia?
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 General anesthesia will put your child into a deep sleep. He or
@@ -251,7 +229,7 @@ const PediatricHospitalDentistryBody = () => {
 
             <div>
               <h3 className="font-bold text-gray-800 text-lg mb-3 flex items-center gap-2">
-                <span>👨‍⚕️</span> Professional Care
+                Professional Care
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 General anesthesia for dental procedures can be provided by an
@@ -263,26 +241,22 @@ const PediatricHospitalDentistryBody = () => {
           </div>
 
           {/* Safety Highlights */}
-          <div className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-200">
+          <div className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-200 card-treatment card-violet">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl">🛡️</span>
               <h4 className="font-bold text-gray-800">Safety Features</h4>
             </div>
             <div className="grid sm:grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg p-4 text-center shadow-sm">
-                <span className="text-2xl block mb-2">💊</span>
+              <div className="bg-white rounded-lg p-4 text-center shadow-sm card-treatment card-violet">
                 <p className="text-gray-700 text-sm font-medium">
                   Trained Medication Delivery
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-4 text-center shadow-sm">
-                <span className="text-2xl block mb-2">📊</span>
+              <div className="bg-white rounded-lg p-4 text-center shadow-sm card-treatment card-violet">
                 <p className="text-gray-700 text-sm font-medium">
                   Continuous Monitoring
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-4 text-center shadow-sm">
-                <span className="text-2xl block mb-2">⚡</span>
+              <div className="bg-white rounded-lg p-4 text-center shadow-sm card-treatment card-violet">
                 <p className="text-gray-700 text-sm font-medium">
                   Complication Handling
                 </p>
@@ -300,9 +274,6 @@ const PediatricHospitalDentistryBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">📋</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Preparing Your Child for General Anesthesia
             </h2>
@@ -320,14 +291,11 @@ const PediatricHospitalDentistryBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 relative"
+                className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 relative card-treatment card-violet"
               >
                 {/* Step Number */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm">
                   {step.step}
-                </div>
-                <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mb-4 mt-2">
-                  <span className="text-3xl">{step.icon}</span>
                 </div>
                 <h3 className="font-bold text-gray-800 text-lg mb-2">
                   {step.title}
@@ -346,12 +314,9 @@ const PediatricHospitalDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 mb-16 border border-emerald-200"
+          className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 mb-16 border border-emerald-200 card-treatment card-violet"
         >
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-2xl">💚</span>
-            </div>
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">
                 A Gentle, Caring Approach
@@ -374,8 +339,8 @@ const PediatricHospitalDentistryBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-3xl p-10 border border-teal-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-10 border border-teal-100 card-treatment card-violet">
+            <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <span className="text-5xl text-white">
                 <Icon icon="dashicons:smiley" />
               </span>
@@ -390,7 +355,7 @@ const PediatricHospitalDentistryBody = () => {
             </p>
             <Link
               href="/contact-us?ref=appointment-request"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold rounded-full hover:shadow-sm transition-all duration-300"
             >
               Schedule Consultation
               <svg

@@ -21,7 +21,7 @@ const DoctorProfile = ({
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-20">
       <div className="container mx-auto grid max-w-5xl items-center gap-10 px-4 lg:grid-cols-[minmax(280px,0.8fr)_1.2fr] lg:gap-14">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl shadow-lg">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl shadow-sm">
           <Image
             src={image}
             alt={name}

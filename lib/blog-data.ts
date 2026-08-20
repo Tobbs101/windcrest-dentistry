@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "how-to-decide-grammar-school",
     image: image1,
-    title: "🏫 How to Decide Which Grammar School Is Best for Your Child",
+    title: " How to Decide Which Grammar School Is Best for Your Child",
     excerpt:
       "Choosing the right grammar school is about more than just academic results—it's about finding the right fit for your child's strengths, goals, and future.",
     category: "Grammar Schools",
@@ -22,69 +22,69 @@ export const blogPosts: BlogPost[] = [
     date: "11 Jan 2025",
     readTime: "8 min read",
     content: `
-<strong>Choosing the Right Grammar School Isn’t Just About Grades</strong>  
+<strong>Choosing the Right Grammar School Isn’t Just About Grades</strong>
 It’s about finding the best fit for your child’s strengths, goals, and future.
 
 At Limit Breakers, we support families across England in navigating the 11+ journey with confidence—from choosing the right school to acing the exam.
 
-<strong>✅ 1. Use the Limit Breakers School Search Tool</strong>  
-To save time and make informed decisions, use the Limit Breakers School Search Tool on our website to:  
-🔍 Find grammar schools in your catchment area  
-📝 Check the exam board (GL, CEM, ISEB, CSSE, etc.)  
-🗓 View 11+ exam dates and deadlines  
-🧭 Get step-by-step guidance on preparing for Year 7 entry  
+<strong> 1. Use the Limit Breakers School Search Tool</strong>
+To save time and make informed decisions, use the Limit Breakers School Search Tool on our website to:
+ Find grammar schools in your catchment area
+ Check the exam board (GL, CEM, ISEB, CSSE, etc.)
+ View 11+ exam dates and deadlines
+ Get step-by-step guidance on preparing for Year 7 entry
 
 Our platform helps families explore all their options—anywhere in England.
 
-<strong>✅ 2. Understand Your Child’s Strengths and Needs</strong>  
+<strong> 2. Understand Your Child’s Strengths and Needs</strong>
 Every school is different. Some are highly academic and competitive, while others focus on creativity, sport, or pastoral care.
 
-<strong>Ask yourself:</strong>  
-- Will my child thrive in a high-pressure environment?  
-- Does the school offer extracurriculars or support systems my child needs?  
+<strong>Ask yourself:</strong>
+- Will my child thrive in a high-pressure environment?
+- Does the school offer extracurriculars or support systems my child needs?
 - What kind of learning environment will help them feel confident and motivated?
 
 Choose a school where your child will feel challenged but supported.
 
-<strong>✅ 3. Visit Schools (Virtually or In Person)</strong>  
-Use open days and virtual tours to get a feel for:  
-- Staff and student attitude  
-- Learning spaces and facilities  
-- School values, ethos, and behaviour expectations  
-- Pastoral care and SEN support  
+<strong> 3. Visit Schools (Virtually or In Person)</strong>
+Use open days and virtual tours to get a feel for:
+- Staff and student attitude
+- Learning spaces and facilities
+- School values, ethos, and behaviour expectations
+- Pastoral care and SEN support
 
 Encourage your child to attend and share their thoughts—they’re part of the decision too.
 
-<strong>✅ 4. Go Beyond the League Tables</strong>  
-Of course, results matter. But also look at:  
-- Subject strengths (e.g. STEM, languages, music)  
-- Progression to sixth form and university  
-- Balance between academics and student well-being  
+<strong> 4. Go Beyond the League Tables</strong>
+Of course, results matter. But also look at:
+- Subject strengths (e.g. STEM, languages, music)
+- Progression to sixth form and university
+- Balance between academics and student well-being
 
 A <strong>“top school”</strong> isn’t the right school if it doesn’t suit your child.
 
-<strong>✅ 5. Don’t Forget Practicalities</strong>  
-Logistics matter more than you think:  
-- How long is the commute?  
-- Is it manageable daily for your child?  
-- Will it impact family routines or after-school activities?  
+<strong> 5. Don’t Forget Practicalities</strong>
+Logistics matter more than you think:
+- How long is the commute?
+- Is it manageable daily for your child?
+- Will it impact family routines or after-school activities?
 
 The best school should work well for your whole family life.
 
-<strong>🚀 How Limit Breakers Can Help</strong>  
-At Limit Breakers, we offer end-to-end 11+ support:  
-- <a class='hover:underline' href='/initial-assessment'>🧪 Free initial assessments.</a> 
-- <a class='hover:underline' href='/lb-online'>📘 Structured weekly 11+ programs.</a>  
-- <a class='hover:underline' href='/practice-papers'>🖥 Downloadable and online practice papers.</a>  
-- 📆 Mock tests and timed exams.  
-- <a class='hover:underline' href='/online-clinic'>🧑‍🏫 Free online clinics with tutors.</a>  
-- <a class='hover:underline' href='/schools'>🗺 Grammar school search and guidance.</a>  
--<a class='hover:underline' href='/secondary'> 🧭 Support for Year 3 to Year 6 students.</a>  
+<strong> How Limit Breakers Can Help</strong>
+At Limit Breakers, we offer end-to-end 11+ support:
+- <a class='hover:underline' href='/initial-assessment'> Free initial assessments.</a>
+- <a class='hover:underline' href='/lb-online'> Structured weekly 11+ programs.</a>
+- <a class='hover:underline' href='/practice-papers'> Downloadable and online practice papers.</a>
+-  Mock tests and timed exams.
+- <a class='hover:underline' href='/online-clinic'> Free online clinics with tutors.</a>
+- <a class='hover:underline' href='/schools'> Grammar school search and guidance.</a>
+-<a class='hover:underline' href='/secondary'>  Support for Year 3 to Year 6 students.</a>
 
-<strong>📍 Ready to Take the First Step?</strong>  
+<strong> Ready to Take the First Step?</strong>
 Use our School Search Tool to explore the best grammar schools in your area and find out everything you need to know—from exam boards and dates to preparation steps.
 
-Start now at <strong><a class='hover:underline' href="https://www.limitbreakers.co.uk" target="_blank">www.limitbreakers.co.uk</a></strong>  
+Start now at <strong><a class='hover:underline' href="https://www.limitbreakers.co.uk" target="_blank">www.limitbreakers.co.uk</a></strong>
 
 <strong>Let’s help your child break limits and reach their full potential.</strong>
  `,
@@ -135,37 +135,37 @@ Starting early helps your child:
 <strong>- Practise regularly</strong>
 <strong>- Build confidence over time</strong>
 
- <strong>🚀 How Limit Breakers Supports the 11+ Journey</strong>
+ <strong> How Limit Breakers Supports the 11+ Journey</strong>
 At Limit Breakers, we provide a complete 11+ preparation system to support students from Year 3 through Year 6.
 
-<strong><a class='hover:underline' href='/lb-online'>✅ Structured Weekly Online Program</a></strong>
+<strong><a class='hover:underline' href='/lb-online'> Structured Weekly Online Program</a></strong>
 - 40-week plan covering English, Maths, Verbal & Non-Verbal Reasoning
 - Video lessons, daily practice questions, instant feedback, and progress tracking
 
-<strong><a class='hover:underline' href='/online-clinic'>✅ Free Weekly Online Clinics</strong>
+<strong><a class='hover:underline' href='/online-clinic'> Free Weekly Online Clinics</strong>
 Live expert support in all four 11+ subjects
 
-<strong><a class='hover:underline' href='/practice-papers'>✅ Practice Papers</a></strong>
+<strong><a class='hover:underline' href='/practice-papers'> Practice Papers</a></strong>
 - Downloadable and online 11+ practice papers
 - Designed to match the style of GL, CEM, and other major boards
 - Ideal for building exam stamina and identifying weak areas
 
-<strong>✅ Mock Test Programs</strong>
+<strong> Mock Test Programs</strong>
 - Realistic timed exam practice under test conditions
 - Detailed reports with feedback and scores to monitor progress
 
-<strong>✅ Holiday Bootcamps</strong>
+<strong> Holiday Bootcamps</strong>
 - Focused revision sessions to sharpen accuracy, speed, and exam techniques
 - Small group format to encourage interaction and targeted improvement
 
-<strong><a class='hover:underline' href='/initial-assessment'>✅ Assessment & Placement</a></strong>
+<strong><a class='hover:underline' href='/initial-assessment'> Assessment & Placement</a></strong>
 - Initial and ongoing assessments to personalise your child's learning journey
 - Tailored recommendations to maximise progress and confidence
 
-<strong>📍 Want to Know Where to Begin?</strong>
+<strong> Want to Know Where to Begin?</strong>
 Take our free initial assessment to find out your child’s current level and receive expert feedback. Then let us guide you step by step—through practice, support, and structure—towards 11+ success.
 
-<strong>🚀 Let's Break Limits Together</strong>
+<strong> Let's Break Limits Together</strong>
 Whether you're aiming for grammar school entry, independent school scholarships, or simply want to strengthen Key Stage 2 skills, Limit Breakers is here to help.
 
 Start today at <strong><a class='hover:underline' href="https://www.limitbreakers.co.uk" target="_blank">www.limitbreakers.co.uk</a></strong>
@@ -182,33 +182,33 @@ Start today at <strong><a class='hover:underline' href="https://www.limitbreaker
     date: "9 Jan 2025",
     readTime: "5 min read",
     content: `
-    <strong>Effective Studying Isn’t Just About Time—It’s About Strategy</strong>  
+    <strong>Effective Studying Isn’t Just About Time—It’s About Strategy</strong>
 Studying effectively isn't just about spending hours with books—it’s about using the right techniques to maximise your learning potential.
 
-<strong>✅ 1. Active Recall</strong>  
-Instead of simply re-reading notes, test yourself regularly.  
+<strong> 1. Active Recall</strong>
+Instead of simply re-reading notes, test yourself regularly.
 This forces your brain to retrieve information, strengthening memory pathways for long-term retention.
 
-<strong>✅ 2. Spaced Repetition</strong>  
-Review material at increasing intervals.  
+<strong> 2. Spaced Repetition</strong>
+Review material at increasing intervals.
 This technique is scientifically proven to transfer information from short-term to long-term memory.
 
-<strong>✅ 3. The Pomodoro Technique</strong>  
-Study in focused 25-minute blocks followed by 5-minute breaks.  
+<strong> 3. The Pomodoro Technique</strong>
+Study in focused 25-minute blocks followed by 5-minute breaks.
 It helps maintain concentration, reduce fatigue, and prevent burnout.
 
-<strong>✅ 4. Mind Mapping</strong>  
-Turn topics into visual maps to understand connections between ideas.  
+<strong> 4. Mind Mapping</strong>
+Turn topics into visual maps to understand connections between ideas.
 Mind maps help with brainstorming, organising thoughts, and boosting recall.
 
-<strong>✅ 5. Practice Testing</strong>  
-Take regular mock exams under timed conditions.  
+<strong> 5. Practice Testing</strong>
+Take regular mock exams under timed conditions.
 They build exam confidence, highlight weak spots, and simulate real test environments.
 
-<strong>💡 Tip:</strong>  
+<strong> Tip:</strong>
 These strategies, when combined with consistent effort and a growth mindset, can significantly enhance your exam performance.
 
-<strong>🚀 Let Limit Breakers Guide Your Study Journey</strong>  
+<strong> Let Limit Breakers Guide Your Study Journey</strong>
 Whether you’re preparing for the 11+ or simply want to study smarter, Limit Breakers provides tools, structure, and expert support to help you succeed.
 
 Visit <strong><a class='hover:underline' href="https://www.limitbreakers.co.uk" target="_blank">www.limitbreakers.co.uk</a></strong> to get started.

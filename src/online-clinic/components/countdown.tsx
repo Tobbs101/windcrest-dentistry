@@ -63,7 +63,7 @@ const CountdownToDate: React.FC<CountdownProps> = ({
 
   function formatTime(milliseconds: number): JSX.Element | string {
     // if (milliseconds <= 0) {
-    //   return "🎉 The countdown is complete!";
+    //   return " The countdown is complete!";
     // }
 
     const seconds = Math.floor(milliseconds / 1000);

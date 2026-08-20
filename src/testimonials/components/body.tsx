@@ -50,9 +50,9 @@ const TestimonialsBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -61,14 +61,14 @@ const TestimonialsBody = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold mb-4"
           >
             What Parents Say
           </motion.span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            <span className="text-amber-500">Testimonials</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            <span>Testimonials</span>
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
             If you&apos;d like to share some kind words, smiles, or feedback,
             please stop by our front desk at your next appointment where a QR
             code is available for a Google Review. We&apos;d love to hear about
@@ -82,14 +82,11 @@ const TestimonialsBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl p-6 md:p-8 text-white mb-16 relative overflow-hidden"
+          className="bg-sky-600 rounded-2xl p-6 md:p-8 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                <span className="text-4xl">⭐</span>
-              </div>
               <div>
                 <h3 className="text-xl font-bold">Leave Us a Review!</h3>
                 <p className="text-sky-100">
@@ -137,11 +134,11 @@ const TestimonialsBody = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow relative"
+              className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 hover:shadow-md transition-shadow relative card-treatment card-sky"
             >
               {/* Quote Icon */}
               <div className="absolute -top-4 left-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-sm">
                   <svg
                     className="w-5 h-5 text-white"
                     fill="currentColor"
@@ -189,8 +186,8 @@ const TestimonialsBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-10 border border-amber-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-10 border border-amber-100 card-treatment card-sky">
+            <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <span className="text-5xl">
                 <Icon icon="dashicons:smiley" />
               </span>
@@ -212,7 +209,6 @@ const TestimonialsBody = () => {
                   viewport={{ once: true }}
                   className="text-3xl"
                 >
-                  ⭐
                 </motion.span>
               ))}
             </div>

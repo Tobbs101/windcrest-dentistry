@@ -59,19 +59,16 @@ const bracesTypes = [
 
 const adultDifferences = [
   {
-    icon: "🦷",
     title: "Gum or Bone Loss",
     description:
       "Adults are more likely than children to experience gum recession or even bone loss due to gingivitis or advanced periodontal disease. Patients with straighter teeth are less likely to get gum disease.",
   },
   {
-    icon: "🔄",
     title: "Worn or Missing Teeth",
     description:
       "Over time teeth can become worn down and shift into different positions that can only be corrected with orthodontic care. Missing teeth can cause other teeth to shift and tilt, creating a bad bite and increasing the possibility of gum disease.",
   },
   {
-    icon: "📋",
     title: "Incomplete Treatment as a Teen",
     description:
       "Many adults received some orthodontic treatment as a child or teen, but never completed their treatment. As an adult, they choose to complete their orthodontic treatment to achieve the healthy, beautiful smile they always wanted.",
@@ -105,18 +102,18 @@ const ForAdultsBody = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
             For Adults
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
             Orthodontic Treatment for{" "}
-            <span className="text-sky-600">Adults</span>
+            <span>Adults</span>
           </h1>
         </motion.div>
 
@@ -147,9 +144,8 @@ const ForAdultsBody = () => {
           </div>
 
           {/* Decorative Element */}
-          <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center">
+          <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center">
             <div className="text-center p-8">
-              <span className="text-7xl mb-4 block">👨‍💼👩‍💼</span>
               <p className="text-sky-700 font-semibold text-xl">
                 1 in 5 Patients Are Adults
               </p>
@@ -170,7 +166,7 @@ const ForAdultsBody = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🤔 Why Adults Consider{" "}
+               Why Adults Consider{" "}
               <span className="text-sky-600">Orthodontic Treatment</span>
             </h2>
           </div>
@@ -183,7 +179,7 @@ const ForAdultsBody = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500 hover:shadow-xl transition-shadow"
+                className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-sky-500 hover:shadow-md transition-shadow card-treatment card-sky"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -209,9 +205,9 @@ const ForAdultsBody = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-sky-600 to-blue-700 rounded-3xl p-8 md:p-12 text-white mb-12">
+          <div className="bg-sky-700 rounded-2xl p-8 md:p-12 text-white mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-              🎨 Treatment Options for Adults
+               Treatment Options for Adults
             </h2>
             <p className="text-lg text-sky-100 text-center max-w-3xl mx-auto">
               For many adults, the thought of having metal braces is enough to
@@ -230,7 +226,7 @@ const ForAdultsBody = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-sky-50 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-sky-100 text-center group"
+                className="bg-gradient-to-br from-white to-sky-50 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all border border-sky-100 text-center group card-treatment card-sky"
               >
                 <div className="w-14 h-14 bg-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                   <Icon icon={type.icon} className="w-7 h-7 text-white" />
@@ -253,10 +249,10 @@ const ForAdultsBody = () => {
         >
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              📊 Adult vs. Teen{" "}
+               Adult vs. Teen{" "}
               <span className="text-sky-600">Orthodontics</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               The main difference between treating adults and children or teens
               is that the jawbones of younger patients are still developing. For
               adults, these bones have stopped growing, which may make
@@ -272,10 +268,9 @@ const ForAdultsBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-white to-sky-50 p-6 rounded-2xl shadow-lg border-l-4 border-sky-500 hover:shadow-xl transition-shadow"
+                className="bg-gradient-to-br from-white to-sky-50 p-6 rounded-2xl shadow-sm border-l-4 border-sky-500 hover:shadow-md transition-shadow card-treatment card-sky"
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-4xl">{diff.icon}</span>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {diff.title}
@@ -292,7 +287,7 @@ const ForAdultsBody = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-sky-50 p-6 rounded-2xl mt-8 border border-sky-100"
+            className="bg-sky-50 p-6 rounded-2xl mt-8 border border-sky-100 card-treatment card-sky"
           >
             <p className="text-lg text-gray-700 text-center">
               Our practice also recognizes that adults and children have
@@ -314,7 +309,7 @@ const ForAdultsBody = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              💡 Why Should You Consider{" "}
+               Why Should You Consider{" "}
               <span className="text-sky-600">Orthodontic Treatment?</span>
             </h2>
           </div>
@@ -327,7 +322,7 @@ const ForAdultsBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-sky-100 group text-center"
+                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-sky-100 group text-center card-treatment card-sky"
               >
                 <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-600 transition-colors">
                   <Icon
@@ -350,7 +345,7 @@ const ForAdultsBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 via-blue-600 to-sky-700 rounded-3xl p-8 md:p-12 text-center text-white"
+          className="bg-sky-700 rounded-2xl p-8 md:p-12 text-center text-white"
         >
           <h2 className="text-2xl gap-2 flex items-center justify-center md:text-3xl font-bold mb-4">
             Ready for Your Best Smile?{" "}
@@ -366,7 +361,7 @@ const ForAdultsBody = () => {
           </p>
           <a
             href="/contact-us?ref=appointment-request"
-            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-lg"
+            className="inline-block px-8 py-4 bg-white text-sky-600 font-semibold rounded-full hover:bg-sky-50 transition-colors shadow-sm"
           >
             Schedule an Appointment
           </a>

@@ -11,17 +11,17 @@ const PrivacyPolicyInfo = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4">
             Legal
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Privacy <span className="text-sky-600">Policy</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Privacy Policy
           </h1>
           <p className="text-gray-600">Last updated: 10/January/2025</p>
         </motion.div>
@@ -32,7 +32,7 @@ const PrivacyPolicyInfo = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-lg border border-sky-100 p-8 md:p-12"
+          className="bg-white rounded-2xl shadow-sm border border-sky-100 p-8 md:p-12 card-treatment card-sky"
         >
           <div className="space-y-8">
             {/* Introduction */}
@@ -472,7 +472,7 @@ const PrivacyPolicyInfo = () => {
                 or our privacy practices, or if you would like to exercise
                 applicable rights, please contact us at:
               </p>
-              <div className="bg-sky-50 rounded-xl p-6 border border-sky-100">
+              <div className="bg-sky-50 rounded-xl p-6 border border-sky-100 card-treatment card-sky">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Windcrest Pediatric Dentistry
                 </h3>

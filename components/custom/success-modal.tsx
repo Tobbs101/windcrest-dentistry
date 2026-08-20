@@ -39,7 +39,7 @@ const SuccessModalCard = ({
       />
 
       {/* Modal Content */}
-      <div className="relative bg-white rounded-lg shadow-2xl md:w-[450px] w-[95%] p-10 flex flex-col">
+      <div className="relative bg-white rounded-lg shadow-md md:w-[450px] w-[95%] p-10 flex flex-col">
         <div className="cta flex flex-col flex-1 justify-between mb-[46px] items-center">
           <h2 className="text-[20px] text-center font-medium text-green-600">
             {title}

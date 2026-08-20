@@ -6,25 +6,22 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import HeroBg from "@/assets/happy-afro-kid-regular-check-up-teeth-dental-clinic.jpg";
 import { Icon } from "@iconify/react";
+import { Pill, Wind } from "lucide-react";
 
 const sedationBenefits = [
   {
-    icon: "🧠",
     title: "No Memory of Procedure",
     description: "Your child will have no recollection of the treatment.",
   },
   {
-    icon: "⏱️",
     title: "No Sense of Time",
     description: "Time passes quickly while under sedation.",
   },
   {
-    icon: "🔇",
     title: "No Sense of Smell or Sound",
     description: "Sensory experiences are minimized during treatment.",
   },
   {
-    icon: "😌",
     title: "No Fear or Anxiety",
     description: "Your child remains calm and relaxed throughout.",
   },
@@ -32,19 +29,16 @@ const sedationBenefits = [
 
 const whoCanBenefit = [
   {
-    icon: "😰",
     title: "Fear or Anxiety",
     description:
       "Children who experience fear or anxiety about visiting the dentist.",
   },
   {
-    icon: "🪑",
     title: "Difficulty Sitting Still",
     description:
       "Children who have a hard time sitting still for long periods.",
   },
   {
-    icon: "💉",
     title: "Anesthetic Challenges",
     description:
       "Children who have difficulty getting or staying numb from anesthetics.",
@@ -55,7 +49,6 @@ const sedationLevels = [
   {
     level: "Mild",
     title: "Mild Sedation (Anxiolysis)",
-    icon: "🌤️",
     color: "emerald",
     description:
       "The lightest form of sedation dentistry, often used for children with mild anxiety, longer procedures, or more complex situations. Usually administered orally.",
@@ -70,7 +63,6 @@ const sedationLevels = [
   {
     level: "Moderate",
     title: "Moderate Sedation",
-    icon: "🌥️",
     color: "amber",
     description:
       "Used for patients with moderate dental anxiety and for those who need longer or more complex procedures. Often involves light IV sedation.",
@@ -85,7 +77,6 @@ const sedationLevels = [
   {
     level: "Deep",
     title: "Deep Sedation",
-    icon: "🌙",
     color: "violet",
     description:
       "Patients go between consciousness and unconsciousness during their dental procedure.",
@@ -101,7 +92,6 @@ const sedationLevels = [
 
 const administrationMethods = [
   {
-    icon: "💨",
     title: "Inhalation",
     subtitle: "Nitrous Oxide (Laughing Gas)",
     description:
@@ -109,7 +99,6 @@ const administrationMethods = [
     color: "sky",
   },
   {
-    icon: "💊",
     title: "Oral",
     subtitle: "Prescription Medication",
     description:
@@ -124,9 +113,9 @@ const SedationDentistryBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="grid lg:grid-cols-2 gap-12 items-center mb-20"
         >
@@ -137,12 +126,12 @@ const SedationDentistryBody = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-violet-100 text-violet-700 rounded-full text-sm font-semibold mb-4"
+              className="inline-block px-4 py-1 bg-violet-100 text-violet-700 rounded-full text-xs font-bold mb-4"
             >
               Comfortable Care
             </motion.span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Sedation <span className="text-violet-500">Dentistry</span>
+            <h1 className="text-4xl underline decoration-violet-500 md:text-5xl font-bold text-gray-800 mb-6">
+              Sedation <span>Dentistry</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               Imagine your child undergoing a complex dental treatment like a
@@ -164,7 +153,7 @@ const SedationDentistryBody = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/3] max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-violet-100 via-violet-200 to-purple-200">
+            <div className="aspect-[4/3] max-w-lg mx-auto rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-violet-100 via-violet-200 to-purple-200">
               <Image
                 src={HeroBg}
                 alt="Child relaxed during dental treatment"
@@ -187,9 +176,6 @@ const SedationDentistryBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">👶</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Who Can Benefit from Sedation Dentistry?
             </h2>
@@ -207,11 +193,8 @@ const SedationDentistryBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow text-center"
+                className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow text-center card-treatment card-violet"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">{item.icon}</span>
-                </div>
                 <h3 className="font-bold text-gray-800 text-lg mb-2">
                   {item.title}
                 </h3>
@@ -227,16 +210,13 @@ const SedationDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
-                <span className="text-3xl">❓</span>
-              </div>
               <h2 className="text-3xl md:text-4xl font-bold">
                 What is Sedation Dentistry?
               </h2>
@@ -258,7 +238,6 @@ const SedationDentistryBody = () => {
                   viewport={{ once: true }}
                   className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center"
                 >
-                  <span className="text-3xl block mb-2">{benefit.icon}</span>
                   <h4 className="font-bold text-white mb-1">{benefit.title}</h4>
                   <p className="text-violet-200 text-sm">
                     {benefit.description}
@@ -278,9 +257,6 @@ const SedationDentistryBody = () => {
           className="mb-16"
         >
           <div className="text-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-3xl">📊</span>
-            </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Levels of Sedation
             </h2>
@@ -299,7 +275,7 @@ const SedationDentistryBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`bg-white rounded-2xl shadow-lg border overflow-hidden ${
+                className={`bg-white rounded-2xl shadow-sm border overflow-hidden card-treatment card-violet ${
                   level.color === "emerald"
                     ? "border-emerald-200"
                     : level.color === "amber"
@@ -318,7 +294,6 @@ const SedationDentistryBody = () => {
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl">{level.icon}</span>
                     <div>
                       <span className="text-white/80 text-sm font-medium">
                         {level.level} Sedation
@@ -348,7 +323,7 @@ const SedationDentistryBody = () => {
                                 : "text-violet-500"
                           }`}
                         >
-                          ✓
+                          <span className="block size-1.5 rounded-full bg-current" />
                         </span>
                         {detail}
                       </li>
@@ -364,7 +339,7 @@ const SedationDentistryBody = () => {
                             : "bg-violet-50 text-violet-700 border border-violet-100"
                       }`}
                     >
-                      💡 {level.note}
+                       {level.note}
                     </div>
                   )}
                 </div>
@@ -379,12 +354,9 @@ const SedationDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-lg p-8 md:p-10 border border-gray-100 mb-16"
+          className="bg-white rounded-2xl shadow-sm p-8 md:p-10 border border-gray-100 mb-16 card-treatment card-violet"
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-2xl">💉</span>
-            </div>
             <h2 className="text-2xl font-bold text-gray-800">
               How Are Sedatives Administered?
             </h2>
@@ -412,7 +384,11 @@ const SedationDentistryBody = () => {
                         : "bg-gradient-to-br from-pink-400 to-rose-500"
                     }`}
                   >
-                    <span className="text-2xl">{method.icon}</span>
+                    {method.color === "sky" ? (
+                      <Wind className="size-7 text-white" aria-hidden="true" />
+                    ) : (
+                      <Pill className="size-7 text-white" aria-hidden="true" />
+                    )}
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-800 text-lg">
@@ -443,12 +419,9 @@ const SedationDentistryBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 mb-16 border border-emerald-200"
+          className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 mb-16 border border-emerald-200 card-treatment card-violet"
         >
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-2xl">🛡️</span>
-            </div>
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">
                 Safe & Regulated
@@ -472,8 +445,8 @@ const SedationDentistryBody = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-3xl p-10 border border-violet-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-violet-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-10 border border-violet-100 card-treatment card-violet">
+            <div className="w-20 h-20 bg-gradient-to-br from-violet-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <span className="text-5xl text-white">
                 <Icon icon="dashicons:smiley" />
               </span>
@@ -488,7 +461,7 @@ const SedationDentistryBody = () => {
             </p>
             <Link
               href="/contact-us?ref=appointment-request"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-500 text-white font-semibold rounded-full hover:shadow-sm transition-all duration-300"
             >
               Schedule Consultation
               <svg

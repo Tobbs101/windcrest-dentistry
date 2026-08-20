@@ -4,17 +4,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { ClipboardPlus, FileText } from "lucide-react";
 
 const forms = [
   {
-    icon: "📝",
     title: "Online Registration Form",
     description: "Complete your patient registration before your first visit",
     href: "https://patientviewer.com/WebFormsGWT/GWT/WebForms/WebForms.html?DOID=9375&RKID=2370&WSDID=58601",
     color: "sky",
   },
   {
-    icon: "🏥",
     title: "Online Health History Form",
     description:
       "Provide your medical and dental health history securely online",
@@ -28,25 +27,21 @@ const steps = [
     step: 1,
     title: "Fill Out Forms",
     description: "Complete the confidential forms online",
-    icon: "✍️",
   },
   {
     step: 2,
     title: "Submit Securely",
     description: "Click submit to send with secure encryption",
-    icon: "🔒",
   },
   {
     step: 3,
     title: "We Receive It",
     description: "Your information will be ready when you arrive",
-    icon: "📬",
   },
   {
     step: 4,
     title: "Verify at Office",
     description: "Provide a signature to verify accuracy",
-    icon: "✅",
   },
 ];
 
@@ -56,9 +51,9 @@ const PatientFormsBody = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -67,14 +62,14 @@ const PatientFormsBody = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold mb-4"
           >
             Get Started
           </motion.span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Patient <span className="text-sky-600">Forms</span>
+          <h1 className="text-4xl underline decoration-sky-500 md:text-5xl font-bold text-gray-800 mb-6">
+            Patient Forms
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
             Take a few minutes to fill out these confidential forms, then click
             the &quot;Submit&quot; button and your information will be sent to
             our office with secure encryption. We will already have your
@@ -88,12 +83,9 @@ const PatientFormsBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 mb-16 border border-amber-200"
+          className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-[2px] p-6 mb-16 border border-amber-200"
         >
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
-              <span className="text-2xl">📋</span>
-            </div>
             <div>
               <h3 className="font-bold text-gray-800 text-lg mb-2">
                 Important Note
@@ -125,20 +117,24 @@ const PatientFormsBody = () => {
               <Link
                 target="_blank"
                 href={form.href}
-                className={`block bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group ${
+                className={`block bg-white rounded-[2px] shadow-sm p-8 border border-gray-100 hover:shadow-md transition-all duration-300 hover:scale-[1.02] group card-treatment card-sky ${
                   form.color === "sky"
                     ? "hover:border-sky-200"
                     : "hover:border-emerald-200"
                 }`}
               >
                 <div
-                  className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 ${
+                  className={`w-20 h-20 rounded-[2px] flex items-center justify-center mb-6 ${
                     form.color === "sky"
                       ? "bg-gradient-to-br from-sky-400 to-blue-500"
                       : "bg-gradient-to-br from-emerald-400 to-teal-500"
-                  } shadow-lg`}
+                  } shadow-sm`}
                 >
-                  <span className="text-4xl">{form.icon}</span>
+                  {form.color === "sky" ? (
+                    <FileText className="size-9 text-white" aria-hidden="true" />
+                  ) : (
+                    <ClipboardPlus className="size-9 text-white" aria-hidden="true" />
+                  )}
                 </div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-sky-600 transition-colors">
                   {form.title}
@@ -195,13 +191,12 @@ const PatientFormsBody = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative bg-white rounded-2xl shadow-lg p-6 border border-gray-100 text-center"
+                className="relative bg-white rounded-[2px] shadow-sm p-6 border border-gray-100 text-center card-treatment card-sky"
               >
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                   {item.step}
                 </div>
                 <div className="pt-4">
-                  <span className="text-4xl mb-4 block">{item.icon}</span>
                   <h3 className="font-bold text-gray-800 text-lg mb-2">
                     {item.title}
                   </h3>
@@ -218,7 +213,7 @@ const PatientFormsBody = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-sky-500 to-blue-600 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden"
+          className="bg-sky-600 rounded-[2px] p-8 md:p-12 text-white text-center relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />

@@ -65,7 +65,7 @@ function PageLayout({
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.9 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-sky-500 hover:bg-sky-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+            className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-sky-500 hover:bg-sky-600 text-white rounded-full shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center group"
             aria-label="Scroll to top"
           >
             <svg
